@@ -17,6 +17,12 @@
         <property name="connectionFactory" ref="connectionFactory" />
     </bean>
     
+    <bean class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer">
+        <property name="location">
+            <value>activeMQ.properties</value>
+        </property>
+    </bean>
+    
     <!-- 注册队列 -->
     <bean id="regisQueue" class="org.apache.activemq.command.ActiveMQQueue">
     	<!-- 设置消息队列的名字 -->
