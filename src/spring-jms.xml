@@ -9,11 +9,14 @@
 
     <!-- 配置JMS连接工厂 -->
     <bean id="connectionFactory" class="org.apache.activemq.spring.ActiveMQConnectionFactory">
-        <property name="brokerURL" value="tcp://localhost:61616" />
+        <property name="brokerURL" value="${jms.broker.url}" />
     </bean>
     
     <!-- 配置JMS模版 -->
     <bean id="jmsTemplate" class="org.springframework.jms.core.JmsTemplate">
+        <property name="connectionFactory" ref="connectionFactory" />
+    </bean>
+    <bean id="conTemplate" class="org.springframework.jms.core.JmsTemplate">
         <property name="connectionFactory" ref="connectionFactory" />
     </bean>
     
@@ -26,37 +29,45 @@
     <!-- 注册队列 -->
     <bean id="regisQueue" class="org.apache.activemq.command.ActiveMQQueue">
     	<!-- 设置消息队列的名字 -->
-    	<constructor-arg index="0" value="ita_p4_reg_mq" />
+    	<constructor-arg index="0" value="${jms.register.name}" />
     </bean>
     
     <!-- 投诉队列 -->
     <bean id="complainQueue" class="org.apache.activemq.command.ActiveMQQueue">
     	<!-- 设置消息队列的名字 -->
-    	<constructor-arg index="0" value="ita_p4_complain_mq" />
+    	<constructor-arg index="0" value="${jms.complain.name}" />
     </bean>
     
     <!-- 推荐菜品队列 -->
-    <bean id="complainQueue" class="org.apache.activemq.command.ActiveMQQueue">
+    <bean id="picQueue" class="org.apache.activemq.command.ActiveMQQueue">
     	<!-- 设置消息队列的名字 -->
-    	<constructor-arg index="0" value="ita_p4_pic_mq" />
+    	<constructor-arg index="0" value="${jms.pic.name}" />
     </bean>
     
     <!-- 评分队列 -->
     <bean id="scoreQueue" class="org.apache.activemq.command.ActiveMQQueue">
     	<!-- 设置消息队列的名字 -->
-    	<constructor-arg index="0" value="ita_p4_score_mq" />
+    	<constructor-arg index="0" value="${jms.score.name}" />
     </bean>
    
     <!-- 消息消费者 -->
     <bean id="registerComsumer" class="ita.project4.main.net.jms.RegisterComsumer">
     	<property name="jmsTemplate" ref="jmsTemplate" />
     </bean>
+    <bean id="complainComsumer" class="ita.project4.main.net.jms.ComplainComsumer">
+    	<property name="conTemplate" ref="conTemplate" />
+    </bean>
     
     <!-- 监听容器 -->
     <bean id="jmsContainerRequest" class="org.springframework.jms.listener.DefaultMessageListenerContainer">  
        <property name="connectionFactory" ref="connectionFactory" />  
-       <property name="regisQ" ref="regisQueue" />  
-       <property name="registerListener" ref="registerComsumer" /> 
+       <property name="destination" ref="regisQueue" />  
+       <property name="messageListener" ref="registerComsumer" /> 
+   </bean>
+   <bean id="ContainerRequest" class="org.springframework.jms.listener.DefaultMessageListenerContainer">  
+       <property name="connectionFactory" ref="connectionFactory" />  
+       <property name="destination" ref="complainQueue" />  
+       <property name="messageListener" ref="complainComsumer" /> 
    </bean>
    
     <!-- 应答监听容器 
