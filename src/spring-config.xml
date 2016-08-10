@@ -3,7 +3,7 @@
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:p="http://www.springframework.org/schema/p"
 	xmlns:context="http://www.springframework.org/schema/context" xmlns:tx="http://www.springframework.org/schema/tx"
 	xmlns:aop="http://www.springframework.org/schema/aop"
-	xsi:schemaLocation=" 
+	xsi:schemaLocation="  
 http://www.springframework.org/schema/beans
 http://www.springframework.org/schema/beans/spring-beans-4.0.xsd
 http://www.springframework.org/schema/aop
@@ -17,6 +17,9 @@ http://www.springframework.org/schema/tx/spring-tx-4.0.xsd" >
 		<property name="url" value="jdbc:oracle:thin:@ITA-031-W7:1521:XE"/> <property 
 		name="username" value="chenhy"/> <property name="password" value="CHENHY"/> 
 		</bean> -->
+		
+		<context:component-scan base-package="ita.project4.main.service"></context:component-scan>
+		<context:component-scan base-package="ita.project4.main.dao"></context:component-scan>
 
 	<aop:aspectj-autoproxy></aop:aspectj-autoproxy>
 
@@ -42,12 +45,12 @@ http://www.springframework.org/schema/tx/spring-tx-4.0.xsd" >
 		<property name="dataSource" ref="ds" />
 		<property name="persistenceUnitName" value="un"></property><!-- 一个请求一个un，一个线程一个 -->
 		<property name="jpaVendorAdapter" ref="hibernateJpaVendorAdapter" />
-		<property name="packagesToScan" value="vo" /><!--待扫描的实体类包，不再需要persistence.xml了 -->
+		<property name="packagesToScan" value="ita.project4.main.po" /><!--待扫描的实体类包，不再需要persistence.xml了 -->
 		<property name="jpaProperties">
 			<props>
 				<prop key="hibernate.ejb.naming_strategy">org.hibernate.cfg.ImprovedNamingStrategy</prop>
 				<prop key="hibernate.show_sql">true</prop>
-				<prop key="hibernate.hbm2ddl.auto">create</prop>
+				<prop key="hibernate.hbm2ddl.auto">update</prop>
 			</props>
 		</property>
 	</bean>
