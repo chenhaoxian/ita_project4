@@ -8,5 +8,11 @@ import ita.project4.main.pojo.Pager;
 public interface MerchantDao {
 	
 	List<Merchant> getMerchantByPage(Pager p);
+	
+	int updateMerchantStatus(int mId,int status);
+	
+	Merchant findMerchantByMBrand(String mBrand);
+	
+	List<String> findAllBrand();
 
 }
