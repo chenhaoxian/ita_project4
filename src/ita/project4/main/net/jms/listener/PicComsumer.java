@@ -1,4 +1,4 @@
-package ita.project4.main.net.jms;
+package ita.project4.main.net.jms.listener;
 
 import javax.jms.Destination;
 import javax.jms.JMSException;
@@ -9,21 +9,29 @@ import javax.jms.TextMessage;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jms.core.JmsTemplate;
 import org.springframework.jms.core.MessageCreator;
 
-public class ComplainComsumer implements MessageListener {
+import ita.project4.main.po.Food;
+import ita.project4.main.service.FoodService;
+import ita.project4.main.util.JsonUtils;
 
-	private static final Logger LOGGER = LoggerFactory.getLogger(ComplainComsumer.class);
+public class PicComsumer implements MessageListener {
 
-	private JmsTemplate conTemplate;
+	private static final Logger LOGGER = LoggerFactory.getLogger(PicComsumer.class);
 
-	public JmsTemplate getConTemplate() {
-		return conTemplate;
+	private JmsTemplate picJMSTemplate;
+	
+	@Autowired
+	private FoodService foodService;
+
+	public JmsTemplate getPicJMSTemplate() {
+		return picJMSTemplate;
 	}
 
-	public void setConTemplate(JmsTemplate conTemplate) {
-		this.conTemplate = conTemplate;
+	public void setPicJMSTemplate(JmsTemplate picJMSTemplate) {
+		this.picJMSTemplate = picJMSTemplate;
 	}
 
 	@Override
@@ -34,6 +42,8 @@ public class ComplainComsumer implements MessageListener {
 				final String request = textMessage.getText();
 				LOGGER.info(request);
 				System.out.println(request);
+				Food food = JsonUtils.toObject(request, Food.class);
+				foodService.saveFood(food);
 //				Destination destination = textMessage.getJMSReplyTo();
 //				final String jmsCorrelationID = textMessage.getJMSCorrelationID();
 //				jmsTemplate.send(destination, new MessageCreator() {

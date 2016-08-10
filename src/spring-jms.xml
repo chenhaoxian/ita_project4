@@ -57,11 +57,17 @@
     </bean>
    
     <!-- 消息消费者 -->
-    <bean id="registerComsumer" class="ita.project4.main.net.jms.RegisterComsumer">
+    <bean id="registerComsumer" class="ita.project4.main.net.jms.listener.RegisterComsumer">
     	<property name="jmsTemplate" ref="jmsTemplate" />
     </bean>
-    <bean id="complainComsumer" class="ita.project4.main.net.jms.ComplainComsumer">
+    <bean id="complainComsumer" class="ita.project4.main.net.jms.listener.ComplainComsumer">
     	<property name="conTemplate" ref="conTemplate" />
+    </bean>
+    <bean id="picComsumer" class="ita.project4.main.net.jms.listener.PicComsumer">
+    	<property name="picJMSTemplate" ref="picJMSTemplate" />
+    </bean>
+    <bean id="scoreComsumer" class="ita.project4.main.net.jms.listener.ScoreComsumer">
+    	<property name="scoreJMSTemplate" ref="scoreJMSTemplate" />
     </bean>
     
     <!-- 监听容器 -->
@@ -74,6 +80,16 @@
        <property name="connectionFactory" ref="connectionFactory" />  
        <property name="destination" ref="complainQueue" />  
        <property name="messageListener" ref="complainComsumer" /> 
+   </bean>
+   <bean id="PicRequest" class="org.springframework.jms.listener.DefaultMessageListenerContainer">  
+       <property name="connectionFactory" ref="connectionFactory" />  
+       <property name="destination" ref="picQueue" />  
+       <property name="messageListener" ref="picComsumer" /> 
+   </bean>
+   <bean id="ScoreRequest" class="org.springframework.jms.listener.DefaultMessageListenerContainer">  
+       <property name="connectionFactory" ref="connectionFactory" />  
+       <property name="destination" ref="scoreQueue" />  
+       <property name="messageListener" ref="scoreComsumer" /> 
    </bean>
    
     <!-- 应答监听容器 

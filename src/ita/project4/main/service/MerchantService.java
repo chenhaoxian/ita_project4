@@ -14,5 +14,7 @@ public interface MerchantService {
 	Merchant findMerchantByMBrand(String mBrand);
 	
 	List<String> findAllBrand();
+	
+	int saveMerchant(Merchant merchant);
 
 }

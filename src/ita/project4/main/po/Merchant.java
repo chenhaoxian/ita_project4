@@ -19,6 +19,13 @@ public class Merchant {
 	private String mCardPath;
 	private String mLocation;
 	private String mBand;
+	private Integer mStatus;
+	public Integer getmStatus() {
+		return mStatus;
+	}
+	public void setmStatus(Integer mStatus) {
+		this.mStatus = mStatus;
+	}
 	public Integer getmId() {
 		return mId;
 	}
@@ -62,7 +69,7 @@ public class Merchant {
 		this.mBand = mBand;
 	}
 	public Merchant(Integer mId, String mPersonName, String mTel, String mIdCard, String mCardPath, String mLocation,
-			String mBand) {
+			String mBand, Integer mStatus) {
 		super();
 		this.mId = mId;
 		this.mPersonName = mPersonName;
@@ -71,6 +78,7 @@ public class Merchant {
 		this.mCardPath = mCardPath;
 		this.mLocation = mLocation;
 		this.mBand = mBand;
+		this.mStatus = mStatus;
 	}
 	public Merchant() {
 		super();
@@ -78,8 +86,10 @@ public class Merchant {
 	@Override
 	public String toString() {
 		return "Merchant [mId=" + mId + ", mPersonName=" + mPersonName + ", mTel=" + mTel + ", mIdCard=" + mIdCard
-				+ ", mCardPath=" + mCardPath + ", mLocation=" + mLocation + ", mBand=" + mBand + "]";
+				+ ", mCardPath=" + mCardPath + ", mLocation=" + mLocation + ", mBand=" + mBand + ", mStatus=" + mStatus
+				+ "]";
 	}
+	
 	
 	
 

@@ -39,6 +39,12 @@ public class MerchantServiceImpl implements MerchantService{
 		// TODO Auto-generated method stub
 		return null;
 	}
+
+	@Override
+	public int saveMerchant(Merchant merchant) {
+		// TODO Auto-generated method stub
+		return 0;
+	}
 	
 
 }
