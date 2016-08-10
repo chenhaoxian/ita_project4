@@ -27,8 +27,8 @@
 		class="org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor" />
 
 
-	<!-- 配置扫描器 
-	<context:component-scan base-package="controller"></context:component-scan>-->
+	<!-- 配置扫描器 -->
+	<context:component-scan base-package="ita.project4.main.controller"></context:component-scan>
 
 
 
@@ -39,7 +39,7 @@
 	<bean
 		class="org.springframework.web.servlet.view.InternalResourceViewResolver"
 		id="viewResolver">
-		<property name="prefix" value="/jsp/"></property>
+		<property name="prefix" value="/view/"></property>
 		<property name="suffix" value=".jsp"></property>
 	</bean>
 
