@@ -8,5 +8,11 @@ import ita.project4.main.pojo.Pager;
 public interface MerchantService {
 	
 	List<Merchant> findMerchantByPage(Pager p );
+	
+	int updateMerchantStatus(int mId,int status);
+	
+	Merchant findMerchantByMBrand(String mBrand);
+	
+	List<String> findAllBrand();
 
 }

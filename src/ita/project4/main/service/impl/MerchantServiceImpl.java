@@ -21,6 +21,24 @@ public class MerchantServiceImpl implements MerchantService{
 		
 		return merchantDao.getMerchantByPage(p);
 	}
+
+	@Override
+	public int updateMerchantStatus(int mId, int status) {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+
+	@Override
+	public Merchant findMerchantByMBrand(String mBrand) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public List<String> findAllBrand() {
+		// TODO Auto-generated method stub
+		return null;
+	}
 	
 
 }
