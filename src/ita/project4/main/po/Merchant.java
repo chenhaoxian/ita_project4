@@ -20,6 +20,7 @@ public class Merchant {
 	private String mLocation;
 	private String mBrand;
 	private Integer mStatus;
+	private double mScore;
 	public Integer getmStatus() {
 		return mStatus;
 	}
@@ -87,7 +88,26 @@ public class Merchant {
 	public String toString() {
 		return "Merchant [mId=" + mId + ", mPersonName=" + mPersonName + ", mTel=" + mTel + ", mIdCard=" + mIdCard
 				+ ", mCardPath=" + mCardPath + ", mLocation=" + mLocation + ", mBrand=" + mBrand + ", mStatus="
-				+ mStatus + "]";
+				+ mStatus + ", mScore=" + mScore + "]";
+	}
+	public double getmScore() {
+		return mScore;
+	}
+	public void setmScore(double mScore) {
+		this.mScore = mScore;
+	}
+	public Merchant(Integer mId, String mPersonName, String mTel, String mIdCard, String mCardPath, String mLocation,
+			String mBrand, Integer mStatus, double mScore) {
+		super();
+		this.mId = mId;
+		this.mPersonName = mPersonName;
+		this.mTel = mTel;
+		this.mIdCard = mIdCard;
+		this.mCardPath = mCardPath;
+		this.mLocation = mLocation;
+		this.mBrand = mBrand;
+		this.mStatus = mStatus;
+		this.mScore = mScore;
 	}
 	
 }
