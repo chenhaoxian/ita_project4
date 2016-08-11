@@ -4,6 +4,7 @@ import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import ita.project4.main.dao.MerchantDao;
 import ita.project4.main.po.Merchant;
@@ -21,23 +22,24 @@ public class MerchantServiceImpl implements MerchantService{
 		
 		return merchantDao.getMerchantByPage(p);
 	}
-
+	
+	@Transactional
 	@Override
-	public int updateMerchantStatus(int mId, int status) {
+	public int updateMerchantStatus(int mId, int mstatus) {
 		// TODO Auto-generated method stub
-		return 0;
+		return merchantDao.updateMerchantStatus(mId, mstatus);
 	}
-
+   
 	@Override
 	public Merchant findMerchantByMBrand(String mBrand) {
 		// TODO Auto-generated method stub
-		return null;
+		return merchantDao.findMerchantByMBrand(mBrand);
 	}
 
 	@Override
-	public List<String> findAllBrand() {
+	public List<String> findAllMBrand() {
 		// TODO Auto-generated method stub
-		return null;
+		return merchantDao.findAllMBrand();
 	}
 	
 

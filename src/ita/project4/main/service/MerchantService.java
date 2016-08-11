@@ -9,10 +9,10 @@ public interface MerchantService {
 	
 	List<Merchant> findMerchantByPage(Pager p );
 	
-	int updateMerchantStatus(int mId,int status);
+	int updateMerchantStatus(int mId,int mstatus);
 	
 	Merchant findMerchantByMBrand(String mBrand);
 	
-	List<String> findAllBrand();
+	List<String> findAllMBrand();
 
 }
