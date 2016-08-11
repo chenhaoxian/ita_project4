@@ -3,6 +3,7 @@ package ita.project4.main.pojo;
 import java.util.List;
 
 public class Pager {
+	public static int PAGE_SIZE = 10;
 	
 	private int page;//当前页码
     private int pageTotal;//总页码

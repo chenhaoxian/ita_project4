@@ -2,11 +2,17 @@ package ita.project4.main.po;
 
 import java.util.List;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
+
 @Entity
+@Table(name="ita_p4_order")
 public class Order {
 
 	@Id
@@ -15,8 +21,8 @@ public class Order {
 	private String uName;
 	private String mTel;
 	private String mBrand;
-	
-	private List<Food> fList;
+	private String foodInfo;
+	private String complaintMsg;
 	public Integer getoId() {
 		return oId;
 	}
@@ -47,29 +53,38 @@ public class Order {
 	public void setmBrand(String mBrand) {
 		this.mBrand = mBrand;
 	}
-	public List<Food> getfList() {
-		return fList;
+	public String getFoodInfo() {
+		return foodInfo;
 	}
-	public void setfList(List<Food> fList) {
-		this.fList = fList;
+	public void setFoodInfo(String foodInfo) {
+		this.foodInfo = foodInfo;
+	}
+	public String getComplaintMsg() {
+		return complaintMsg;
+	}
+	public void setComplaintMsg(String complaintMsg) {
+		this.complaintMsg = complaintMsg;
 	}
 	@Override
 	public String toString() {
 		return "Order [oId=" + oId + ", uTel=" + uTel + ", uName=" + uName + ", mTel=" + mTel + ", mBrand=" + mBrand
-				+ ", fList=" + fList + "]";
+				+ ", foodInfo=" + foodInfo + ", complaintMsg=" + complaintMsg + "]";
 	}
-	public Order(Integer oId, String uTel, String uName, String mTel, String mBrand, List<Food> fList) {
+	public Order(Integer oId, String uTel, String uName, String mTel, String mBrand, String foodInfo,
+			String complaintMsg) {
 		super();
 		this.oId = oId;
 		this.uTel = uTel;
 		this.uName = uName;
 		this.mTel = mTel;
 		this.mBrand = mBrand;
-		this.fList = fList;
+		this.foodInfo = foodInfo;
+		this.complaintMsg = complaintMsg;
 	}
 	public Order() {
 		super();
 	}
+	
 	
 	
 	

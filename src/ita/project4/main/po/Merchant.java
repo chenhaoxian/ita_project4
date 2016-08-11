@@ -11,7 +11,6 @@ import javax.persistence.Table;
 public class Merchant {
 
 	@Id
-	@GeneratedValue(strategy = GenerationType.SEQUENCE)
 	private Integer mId;
 	private String mPersonName;
 	private String mTel;

@@ -47,27 +47,27 @@
 		
 		<aside class="sidebar">
 			<ul class="tab_nav">
-				<li class="active_tab i_32_dashboard">
-					<a href="" title="General Info">
+				<li class=" i_32_dashboard">
+					<a href="index.jsp" title="General Info">
 						<span class="tab_label">首   页</span>
 						<span class="tab_info">Index</span>
 					</a>
 				</li>
 				<li class=" i_32_dashboard">
-					<a href="" title="General Info">
+					<a href="merchantManage.jsp" title="General Info">
 						<span class="tab_label">商家管理</span>
 						<span class="tab_info">Merchant Manage</span>
 					</a>
 				</li>
-				<li class=" i_32_dashboard">
-					<a href="" title="General Info">
-						<span class="tab_label">菜品管理</span>
-						<span class="tab_info">Chef Dish</span>
+				<li class="active_tab i_32_dashboard">
+					<a href="chefDish.jsp" title="General Info">
+						<span class="tab_label">推荐菜品</span>
+						<span class="tab_info">Main Dish</span>
 					</a>
 				</li>
 				<li class=" i_32_dashboard">
-					<a href="" title="General Info">
-						<span class="tab_label">评分管理</span>
+					<a href="scoreManage.jsp" title="General Info">
+						<span class="tab_label">低评商家</span>
 						<span class="tab_info">Score Manage</span>
 					</a>
 				</li>
@@ -194,7 +194,7 @@
 
 	</div>
 
-<script type="text/javascript" src="res/js/jquery.min.js"></script>
-<script type="text/javascript" src="res/js/index.js"></script>
+<script type="text/javascript" src="../res/js/jquery.min.js"></script>
+<script type="text/javascript" src="../res/js/index.js"></script>
 </body>
 </html>

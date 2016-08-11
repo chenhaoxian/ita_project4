@@ -32,7 +32,6 @@
 	<context:component-scan base-package="ita.project4.main.net.webservice.controller"></context:component-scan>
 
 
-
 	<!-- 资源文件 -->
 	<mvc:resources location="/res/" mapping="/res/**" />
 
