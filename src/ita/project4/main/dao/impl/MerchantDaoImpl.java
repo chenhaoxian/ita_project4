@@ -52,4 +52,10 @@ public class MerchantDaoImpl implements MerchantDao {
 		return 0;
 	}
 
+	@Override
+	public int findMerchantStatus(int mId) {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+
 }

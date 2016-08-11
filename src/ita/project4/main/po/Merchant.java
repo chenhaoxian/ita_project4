@@ -18,7 +18,7 @@ public class Merchant {
 	private String mIdCard;
 	private String mCardPath;
 	private String mLocation;
-	private String mBand;
+	private String mBrand;
 	private Integer mStatus;
 	public Integer getmStatus() {
 		return mStatus;
@@ -62,14 +62,14 @@ public class Merchant {
 	public void setmLocation(String mLocation) {
 		this.mLocation = mLocation;
 	}
-	public String getmBand() {
-		return mBand;
+	public String getmBrand() {
+		return mBrand;
 	}
-	public void setmBand(String mBand) {
-		this.mBand = mBand;
+	public void setmBrand(String mBrand) {
+		this.mBrand = mBrand;
 	}
 	public Merchant(Integer mId, String mPersonName, String mTel, String mIdCard, String mCardPath, String mLocation,
-			String mBand, Integer mStatus) {
+			String mBrand, Integer mStatus) {
 		super();
 		this.mId = mId;
 		this.mPersonName = mPersonName;
@@ -77,7 +77,7 @@ public class Merchant {
 		this.mIdCard = mIdCard;
 		this.mCardPath = mCardPath;
 		this.mLocation = mLocation;
-		this.mBand = mBand;
+		this.mBrand = mBrand;
 		this.mStatus = mStatus;
 	}
 	public Merchant() {
@@ -86,13 +86,8 @@ public class Merchant {
 	@Override
 	public String toString() {
 		return "Merchant [mId=" + mId + ", mPersonName=" + mPersonName + ", mTel=" + mTel + ", mIdCard=" + mIdCard
-				+ ", mCardPath=" + mCardPath + ", mLocation=" + mLocation + ", mBand=" + mBand + ", mStatus=" + mStatus
-				+ "]";
+				+ ", mCardPath=" + mCardPath + ", mLocation=" + mLocation + ", mBrand=" + mBrand + ", mStatus="
+				+ mStatus + "]";
 	}
 	
-	
-	
-
-	
-
 }
