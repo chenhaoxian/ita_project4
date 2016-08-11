@@ -18,5 +18,7 @@ public interface MerchantDao {
 	int saveMerchant(Merchant merchant);
 	
 	int findMerchantStatus(int mId);
+	
+	List<Integer> getAllMerchantStatus();
 
 }

@@ -69,7 +69,22 @@ public class MerchantServiceImplTest {
 
 	@Test
 	public void testFindMerchantStatus() {
+		int mstatus=ms.findMerchantStatus(1);
+		System.out.println(mstatus);
 		
 	}
+	
+	@Test
+	public void testgetAllMerchantStatus(){
+		Pager p = new Pager();
+		p.setPage(1);
+		List<Merchant> st = ms.findMerchantByPage(p);
+		List<Integer> list = new ArrayList<>();
+		for (Merchant m : st) {
+			list.add(m.getmStatus());
+		}
+		System.out.println(list);
+	}
+	
 
 }

@@ -84,5 +84,17 @@ public class MerchantDaoImpl implements MerchantDao {
 	    return lm.get(0).getmStatus();
 	}
 
+	@Override
+	public List<Integer> getAllMerchantStatus() {
+		// TODO Auto-generated method stub
+		String jpql = "from Merchant";
+		List<Merchant> st = em.createQuery(jpql).getResultList();
+		List<Integer> list = new ArrayList<>();
+		for (Merchant m : st) {
+			list.add(m.getmStatus());
+		}
+		return list;
+	}
+
 }
 
