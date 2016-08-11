@@ -7,7 +7,6 @@ import javax.persistence.Id;
 import javax.persistence.Table;
 
 @Entity
-@Table(name = "ita_p4_order")
 public class Order {
 
 	@Id
@@ -16,6 +15,7 @@ public class Order {
 	private String uName;
 	private String mTel;
 	private String mBrand;
+	
 	private List<Food> fList;
 	public Integer getoId() {
 		return oId;
