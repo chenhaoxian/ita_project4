@@ -5,6 +5,8 @@ import static org.junit.Assert.*;
 import java.util.ArrayList;
 import java.util.List;
 
+import org.apache.activemq.store.kahadb.disk.page.Page;
+import org.hibernate.annotations.FilterDefs;
 import org.junit.Assert;
 import org.junit.BeforeClass;
 import org.junit.Test;
@@ -27,7 +29,10 @@ public class MerchantServiceImplTest {
 
 	@Test
 	public void testFindMerchantByPage() {
-		
+		Pager p = new Pager();
+		p.setPage(1);
+		List<Merchant> st = ms.findMerchantByPage(p);
+		System.out.println(st);
 	}
 
 	@Test
@@ -43,13 +48,7 @@ public class MerchantServiceImplTest {
 
 	@Test
 	public void testFindAllBrand() {
-		Pager p = new Pager();
-		p.setPage(1);
-		List<Merchant> st = ms.findMerchantByPage(p);
-		List<String> list = new ArrayList<>();
-		for (Merchant m : st) {
-			list.add(m.getmBrand());
-		}
+		List<String> list=ms.findAllBrand();
 		System.out.println(list);
 	}
 
@@ -76,17 +75,6 @@ public class MerchantServiceImplTest {
 		
 	}
 	
-	@Test
-	public void testgetAllMerchantStatus(){
-		Pager p = new Pager();
-		p.setPage(1);
-		List<Merchant> st = ms.findMerchantByPage(p);
-		List<Integer> list = new ArrayList<>();
-		for (Merchant m : st) {
-			list.add(m.getmStatus());
-		}
-		System.out.println(list);
-	}
 	
 	@Test
 	public void getPassMId() {
