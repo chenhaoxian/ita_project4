@@ -8,7 +8,7 @@ public class Pager {
     private int pageTotal;//总页码
     private int rowsTotal;//总条数
     private int rows;//每页显示条数
-        private String hql;//分页语句    
+    private String hql;//分页语句    
     private List<?> list;//返回的数据集合
     
 
