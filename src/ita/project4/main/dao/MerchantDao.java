@@ -19,6 +19,6 @@ public interface MerchantDao {
 	
 	int findMerchantStatus(int mId);
 	
-	List<Integer> getAllMerchantStatus();
+	List<Integer> getPassMId();
 
 }

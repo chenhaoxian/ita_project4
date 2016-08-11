@@ -11,7 +11,7 @@ import javax.persistence.Table;
 public class Food {
 	
 	@Id
-	@GeneratedValue(strategy = GenerationType.SEQUENCE)
+
 	private Integer fId;
 	private String fName;
 	private Integer mId;

@@ -58,8 +58,8 @@ public class MerchantDaoImpl implements MerchantDao {
 	@Override
 	public List<String> findAllBrand() {
 		// TODO Auto-generated method stub
-		String jpql = "from Merchant";
-		List<Merchant> st = em.createQuery(jpql).getResultList();
+		String jqpl = "from Merchant";
+		List<Merchant> st = em.createQuery(jqpl).getResultList();
 		List<String> list = new ArrayList<>();
 		for (Merchant m : st) {
 			list.add(m.getmBrand());
@@ -84,14 +84,16 @@ public class MerchantDaoImpl implements MerchantDao {
 	    return lm.get(0).getmStatus();
 	}
 
+
+
 	@Override
-	public List<Integer> getAllMerchantStatus() {
+	public List<Integer> getPassMId() {
 		// TODO Auto-generated method stub
-		String jpql = "from Merchant";
-		List<Merchant> st = em.createQuery(jpql).getResultList();
+		String jqpl = "select m from Merchant m where m.mStatus=2";
+		List<Merchant> st = em.createQuery(jqpl).getResultList();
 		List<Integer> list = new ArrayList<>();
 		for (Merchant m : st) {
-			list.add(m.getmStatus());
+			list.add(m.getmId());
 		}
 		return list;
 	}

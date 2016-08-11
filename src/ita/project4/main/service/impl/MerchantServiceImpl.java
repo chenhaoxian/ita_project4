@@ -57,10 +57,12 @@ public class MerchantServiceImpl implements MerchantService{
 	}
 
 	@Override
-	public List<Integer> getAllMerchantStatus() {
+	public List<Integer> getPassMId() {
 		// TODO Auto-generated method stub
-		return merchantDao.getAllMerchantStatus();
+		return merchantDao.getPassMId();
 	}
+
+
 	
 
 }

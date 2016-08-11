@@ -56,13 +56,15 @@ public class MerchantServiceImplTest {
 	@Test
 	public void testSaveMerchant() {
 		Merchant merchant=new Merchant();
-		merchant.setmPersonName("vicky");
+		merchant.setmId(6);
+		merchant.setmPersonName("dfff");
 		merchant.setmLocation("好好");
 		merchant.setmBrand("小天使");
 		merchant.setmCardPath("www.baidu.com");
 		merchant.setmIdCard("145456486748455");
 		merchant.setmStatus(1);
 		merchant.setmTel("64554564545");
+		merchant.setmStatus(2);
 		int rs=ms.saveMerchant(merchant);
 		Assert.assertTrue(rs>=1);
 	}
@@ -84,6 +86,13 @@ public class MerchantServiceImplTest {
 			list.add(m.getmStatus());
 		}
 		System.out.println(list);
+	}
+	
+	@Test
+	public void getPassMId() {
+		List<Integer> list = ms.getPassMId();
+		System.out.println(list);
+		
 	}
 	
 
