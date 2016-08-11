@@ -1,4 +1,4 @@
-package ita.project4.main.po;
+package ita.project4.main.protocol.po;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -6,12 +6,10 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
-@Entity
-@Table(name = "Merchant")
+
 public class Merchant {
 
-	@Id
-	@GeneratedValue(strategy = GenerationType.SEQUENCE)
+
 	private Integer mId;
 	private String mPersonName;
 	private String mTel;

@@ -14,5 +14,7 @@ public interface MerchantDao {
 	Merchant findMerchantByMBrand(String mBrand);
 	
 	List<String> findAllBrand();
+	
+	int saveMerchant(Merchant merchant);
 
 }

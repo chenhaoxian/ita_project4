@@ -1,4 +1,4 @@
-package ita.project4.main.net.jms;
+package ita.project4.main.net.jms.listener;
 
 import javax.jms.Destination;
 import javax.jms.JMSException;
@@ -12,25 +12,18 @@ import org.slf4j.LoggerFactory;
 import org.springframework.jms.core.JmsTemplate;
 import org.springframework.jms.core.MessageCreator;
 
-public class RegisterComsumer implements MessageListener {
+public class ComplainComsumer implements MessageListener {
 
-	private static final Logger LOGGER = LoggerFactory.getLogger(RegisterComsumer.class);
+	private static final Logger LOGGER = LoggerFactory.getLogger(ComplainComsumer.class);
 
-	private JmsTemplate jmsTemplate;
+	private JmsTemplate conTemplate;
 
-	/**
-	 * @return the jmsTemplate
-	 */
-	public JmsTemplate getJmsTemplate() {
-		return jmsTemplate;
+	public JmsTemplate getConTemplate() {
+		return conTemplate;
 	}
 
-	/**
-	 * @param jmsTemplate
-	 *            the jmsTemplate to set
-	 */
-	public void setJmsTemplate(JmsTemplate jmsTemplate) {
-		this.jmsTemplate = jmsTemplate;
+	public void setConTemplate(JmsTemplate conTemplate) {
+		this.conTemplate = conTemplate;
 	}
 
 	@Override
@@ -41,6 +34,7 @@ public class RegisterComsumer implements MessageListener {
 				final String request = textMessage.getText();
 				LOGGER.info(request);
 				System.out.println(request);
+				
 //				Destination destination = textMessage.getJMSReplyTo();
 //				final String jmsCorrelationID = textMessage.getJMSCorrelationID();
 //				jmsTemplate.send(destination, new MessageCreator() {

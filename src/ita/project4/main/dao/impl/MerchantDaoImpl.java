@@ -46,4 +46,10 @@ public class MerchantDaoImpl implements MerchantDao {
 		return null;
 	}
 
+	@Override
+	public int saveMerchant(Merchant merchant) {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+
 }
