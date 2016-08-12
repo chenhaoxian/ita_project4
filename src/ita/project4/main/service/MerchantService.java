@@ -20,5 +20,7 @@ public interface MerchantService {
 	int findMerchantStatus(int mId);
 	
 	List<Integer> getPassMId();
+	
+	int updateMerchantScore(int mId,int mScore);
 
 }

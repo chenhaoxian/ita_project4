@@ -98,5 +98,14 @@ public class MerchantDaoImpl implements MerchantDao {
 		return list;
 	}
 
+	@Override
+	public int updateMerchantScore(int mId, int mScore) {
+		// TODO Auto-generated method stub
+		Merchant merchant = em.find(Merchant.class, mId);
+		merchant.setmScore(mScore);
+		em.merge(merchant);
+		return 1;
+	}
+
 }
 

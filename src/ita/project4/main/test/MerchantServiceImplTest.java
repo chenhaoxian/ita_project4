@@ -32,6 +32,9 @@ public class MerchantServiceImplTest {
 		Pager p = new Pager();
 		p.setPage(1);
 		List<Merchant> st = ms.findMerchantByPage(p);
+//		for (Merchant merchant : st) {
+//			System.out.println(merchant.getmId()+"..."+merchant.getmTel());
+//		}
 		System.out.println(st);
 	}
 
@@ -80,6 +83,12 @@ public class MerchantServiceImplTest {
 	public void getPassMId() {
 		List<Integer> list = ms.getPassMId();
 		System.out.println(list);
+		
+	}
+	
+	@Test
+	public void updateMerchantScore(){
+		ms.updateMerchantScore(3, 7);
 		
 	}
 	

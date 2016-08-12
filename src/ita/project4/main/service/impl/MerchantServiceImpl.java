@@ -62,6 +62,13 @@ public class MerchantServiceImpl implements MerchantService{
 		return merchantDao.getPassMId();
 	}
 
+	@Override
+	@Transactional
+	public int updateMerchantScore(int mId, int mScore) {
+		// TODO Auto-generated method stub
+		return merchantDao.updateMerchantScore(mId, mScore);
+	}
+
 
 	
 

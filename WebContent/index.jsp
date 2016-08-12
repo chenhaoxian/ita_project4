@@ -16,7 +16,7 @@
 
 	
 	<!--==================================================== 4 yuan =============================================== -->
-	<header class="main_header">
+	 <!--  <header class="main_header">
 		<div class="wrapper">
 			<nav class="top_buttons">
 				<ul>
@@ -39,7 +39,8 @@
 			</nav>
 		</div>
 	</header>
-
+	 -->
+	 <jsp:include page="header.jsp"></jsp:include> 
 	<!-- =========================侧边栏目          start ========================================================-->
 
 
