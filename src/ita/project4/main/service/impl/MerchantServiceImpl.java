@@ -64,9 +64,15 @@ public class MerchantServiceImpl implements MerchantService{
 
 	@Override
 	@Transactional
-	public int updateMerchantScore(int mId, int mScore) {
+	public int updateMerchantScore(int mId, Double mScore) {
 		// TODO Auto-generated method stub
 		return merchantDao.updateMerchantScore(mId, mScore);
+	}
+
+	@Override
+	public List<Merchant> findLowMerchantByPage(Pager p) {
+		// TODO Auto-generated method stub
+		return merchantDao.findLowMerchantByPage(p);
 	}
 
 

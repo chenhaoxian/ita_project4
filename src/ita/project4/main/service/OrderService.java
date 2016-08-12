@@ -13,6 +13,10 @@ public interface OrderService {
 	
 	List<Order> findOrderByPage(Pager p);
 	
+	int saveOrder(int oId,int oStatus);
+	
+	int updateOrderStatus(int oId);
+	
 	
 	
 	

@@ -21,6 +21,8 @@ public interface MerchantDao {
 	
 	List<Integer> getPassMId();
 	
-	int updateMerchantScore(int mId,int mScore);
+	int updateMerchantScore(int mId,Double mScore);
+	
+	List<Merchant> findLowMerchantByPage(Pager p);
 
 }

@@ -88,9 +88,19 @@ public class MerchantServiceImplTest {
 	
 	@Test
 	public void updateMerchantScore(){
-		ms.updateMerchantScore(3, 7);
+		ms.updateMerchantScore(3, 7.0);
 		
 	}
 	
+	@Test
+	public void findLowMerchantByPage(){
+		Pager p = new Pager();
+		p.setPage(1);
+		List<Merchant> st = ms.findLowMerchantByPage(p);
+		for (Merchant merchant : st) {
+			System.out.println(merchant.getmId()+"..."+merchant.getmTel());
+		}
+		System.out.println(st);
+	}
 
 }

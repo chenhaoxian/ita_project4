@@ -50,4 +50,16 @@ public class OrderServiceImpl implements OrderService{
 		return orderDao.findOrderByPage(p);
 	}
 
+	@Override
+	public int saveOrder(int oId, int oStatus) {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+
+	@Override
+	public int updateOrderStatus(int oId) {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+
 }

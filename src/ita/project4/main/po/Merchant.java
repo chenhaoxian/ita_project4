@@ -19,7 +19,7 @@ public class Merchant {
 	private String mLocation;
 	private String mBrand;
 	private Integer mStatus;
-	private Integer mScore;
+	private double mScore;
 	public Integer getmStatus() {
 		return mStatus;
 	}
@@ -72,10 +72,10 @@ public class Merchant {
 	public Merchant() {
 		super();
 	}
-	public Integer getmScore() {
+	public double getmScore() {
 		return mScore;
 	}
-	public void setmScore(Integer mScore) {
+	public void setmScore(Double mScore) {
 		this.mScore = mScore;
 	}
 	public Merchant(Integer mId, String mPersonName, String mTel, String mIdCard, String mCardPath, String mLocation,

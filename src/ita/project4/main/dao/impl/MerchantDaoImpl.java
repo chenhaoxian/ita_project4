@@ -99,12 +99,24 @@ public class MerchantDaoImpl implements MerchantDao {
 	}
 
 	@Override
-	public int updateMerchantScore(int mId, int mScore) {
+	public int updateMerchantScore(int mId, Double mScore) {
 		// TODO Auto-generated method stub
 		Merchant merchant = em.find(Merchant.class, mId);
 		merchant.setmScore(mScore);
 		em.merge(merchant);
 		return 1;
+	}
+
+	@Override
+	public List<Merchant> findLowMerchantByPage(Pager p) {
+		// TODO Auto-generated method stub
+		String jpql = "select m from Merchant m where m.mScore<=5.0";
+		// em.createQuery(jpql).setFirstResult((p.getPage()-1)*p.getRows()).getResultList()
+		Query query = em.createQuery(jpql);
+		query.setFirstResult((p.getPage() - 1) * p.getRows());
+		query.setMaxResults(p.getRows());
+		return query.getResultList();
+	
 	}
 
 }
