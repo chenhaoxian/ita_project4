@@ -48,4 +48,22 @@ public class OrderDaoImpl implements OrderDao{
 		return query.getResultList();
 	}
 
+	@Override
+	public int updateOrderStatus(int oId, int oStatus) {
+		// TODO Auto-generated method stub
+		Order order=em.find(Order.class, oId);
+		order.setoStatus(oStatus);
+		em.merge(order);
+		return 1;
+	}
+
+	public int saveOrder(int oId, int oStatus) {
+		// TODO Auto-generated method stub
+		Order order=new Order();
+		order.setoId(oId);
+		order.setoStatus(oStatus);
+		em.persist(order);
+		return order.getoId();
+		}
+
 }

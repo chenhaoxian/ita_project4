@@ -52,5 +52,15 @@ public class OrderServiceImplTest {
 		p.setPage(1);		
 		System.out.println(os.findOrderByPage(p));
 	}
+	
+	@Test
+	public void testupdateOrderStatus(){
+		os.updateOrderStatus(1, 2);
+	}
+	
+	@Test
+	public void testsaveOrder(){
+		os.saveOrder(5, 2);
+	}
 
 }

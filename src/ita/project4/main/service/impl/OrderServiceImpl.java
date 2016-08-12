@@ -51,15 +51,18 @@ public class OrderServiceImpl implements OrderService{
 	}
 
 	@Override
+	@Transactional
 	public int saveOrder(int oId, int oStatus) {
 		// TODO Auto-generated method stub
-		return 0;
+		return orderDao.saveOrder(oId, oStatus);
 	}
 
 	@Override
-	public int updateOrderStatus(int oId) {
+	@Transactional
+	public int updateOrderStatus(int oId, int oStatus) {
 		// TODO Auto-generated method stub
-		return 0;
+		return orderDao.updateOrderStatus(oId,oStatus);
 	}
+
 
 }

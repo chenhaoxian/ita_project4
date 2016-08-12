@@ -13,6 +13,17 @@ public class Order {
 
 	@Id
 	private Integer oId;
+	private Integer oStatus;
+	public Order(Integer oId, Integer oStatus, String uTel, String uName, String mTel, String mBrand, String foodInfo) {
+		super();
+		this.oId = oId;
+		this.oStatus = oStatus;
+		this.uTel = uTel;
+		this.uName = uName;
+		this.mTel = mTel;
+		this.mBrand = mBrand;
+		this.foodInfo = foodInfo;
+	}
 	private String uTel;
 	private String uName;
 	private String mTel;
@@ -70,6 +81,12 @@ public class Order {
 	public String toString() {
 		return "Order [oId=" + oId + ", uTel=" + uTel + ", uName=" + uName + ", mTel=" + mTel + ", mBrand=" + mBrand
 				+ ", foodInfo=" + foodInfo + "]";
+	}
+	public Integer getoStatus() {
+		return oStatus;
+	}
+	public void setoStatus(Integer oStatus) {
+		this.oStatus = oStatus;
 	}
 	
 	

@@ -15,7 +15,7 @@ public interface OrderService {
 	
 	int saveOrder(int oId,int oStatus);
 	
-	int updateOrderStatus(int oId);
+	int updateOrderStatus(int oId,int oStatus);
 	
 	
 	
