@@ -21,7 +21,7 @@
 				</li>
 				<li class=" i_32_dashboard">
 					<a href="${pageContext.request.contextPath}/view/merchantManage.jsp" title="General Info">
-						<span class="tab_label">商家管理</span>
+						<span class="tab_label">注册管理</span>
 						<span class="tab_info">Merchant Manage</span>
 					</a>
 				</li>
@@ -63,7 +63,7 @@
 							<th>姓名</th><th>电话</th><th>店名</th><th>地址</th><th>店铺分数</th><th>状态</th>
 							<tbody id="lowMerchant_data_table"></tbody>
 						</table>
-						<div align="center"><button class="button button-3d button-box button-jumbo" id="btn_previous">Prev</button><button class="button button-3d button-box button-jumbo" id="btn_next">next</button></div>
+						<div align="center"><button class="button button-3d button-box button-jumbo" id="btn_previous"><font color="#C0C0C0">Prev</font></button>&nbsp;&nbsp;<button class="button button-3d button-box button-jumbo" id="btn_next"><font color="#C0C0C0">next</font></button></div>
 				</div>
 
 			</div>

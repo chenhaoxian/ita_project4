@@ -21,7 +21,7 @@ ScoreManage.prototype.init = function(){
 		dataType:"json",
 		success:function(mList){
 			var m_tbody = $("#lowMerchant_data_table");
-			if(mList != null){
+			if(mList != null && mList != ''){
 				var trs = "";
 				$.each(mList,function(key,value){
 					trs += "<tr>" +
@@ -35,7 +35,7 @@ ScoreManage.prototype.init = function(){
 							"</tr>";
 				});
 				m_tbody.append(trs);
-//				$("#div_test").append("<img class='img-circle' src='10.222.232.157:8087/imgs/15007115195/IDCard.jpg' style='width:100%;height:100%;'/>");
+//				$("#div_test").append("<img class='img-circle' src='10.222.232.145:8080/imgs/15007115195/IDCard.jpg' style='width:100%;height:100%;'/>");
 			}else{
 				var tr = "<tr><td>no record found!</td></tr>";
 				m_tbody.append(tr);
@@ -75,7 +75,7 @@ ScoreManage.prototype.bindEvent = function(){
 						"</tr>";
 					});
 					m_tbody.append(trs);
-//					$("#div_test").append("<img class='img-circle' src='10.222.232.157:8087/imgs/15007115195/IDCard.jpg' style='width:100%;height:100%;'/>");
+//					$("#div_test").append("<img class='img-circle' src='10.222.232.145:8080/imgs/15007115195/IDCard.jpg' style='width:100%;height:100%;'/>");
 				}else{
 					alert("没有数据啦 !");
 					page_score_num = page_score_num - 1;
@@ -113,7 +113,7 @@ ScoreManage.prototype.bindEvent = function(){
 						"</tr>";
 					});
 					m_tbody.append(trs);
-//					$("#div_test").append("<img class='img-circle' src='10.222.232.157:8087/imgs/15007115195/IDCard.jpg' style='width:100%;height:100%;'/>");
+//					$("#div_test").append("<img class='img-circle' src='10.222.232.145:8080/imgs/15007115195/IDCard.jpg' style='width:100%;height:100%;'/>");
 				}else{
 					alert("已经是第一页啦 !");
 					page_score_num = page_score_num + 1;

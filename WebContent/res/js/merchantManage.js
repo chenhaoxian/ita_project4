@@ -21,11 +21,11 @@ Index.prototype.init = function(){
 		dataType:"json",
 		success:function(mList){
 			var m_tbody = $("#merchant_data_table");
-			if(mList != null){
+			if(mList != null && mList != ''){
 				var trs = "";
 				$.each(mList,function(key,value){
 					trs += "<tr>" +
-							"<td><img class='img-circle' src='http://10.222.232.157:8087/imgs/"+value.mCardPath+"' style='width:100%;height:60%;'/></td>" +
+							"<td><img class='img-circle' src='http://10.222.232.145:8080/imgs/"+value.mCardPath+"' style='width:200px;height:150px;'/></td>" +
 							"<td>"+value.mIdCard+"</td>" +
 							"<td>"+value.mPersonName+"</td>" +
 							"<td>"+value.mTel+"</td>" +
@@ -36,7 +36,7 @@ Index.prototype.init = function(){
 							"</tr>";
 				});
 				m_tbody.append(trs);
-//				$("#div_test").append("<img class='img-circle' src='10.222.232.157:8087/imgs/15007115195/IDCard.jpg' style='width:100%;height:100%;'/>");
+//				$("#div_test").append("<img class='img-circle' src='10.222.232.145:8080/imgs/15007115195/IDCard.jpg' style='width:100%;height:100%;'/>");
 			}else{
 				var tr = "<tr><td>no record found!</td></tr>";
 				m_tbody.append(tr);
@@ -66,7 +66,7 @@ Index.prototype.bindEvent = function(){
 					var trs = "";
 					$.each(mList,function(key,value){
 						trs += "<tr>" +
-								"<td><img class='img-circle' src='http://10.222.232.157:8087/imgs/"+value.mCardPath+"' style='width:100%;height:60%;'/></td>" +
+								"<td><img class='img-circle' src='http://10.222.232.145:8080/imgs/"+value.mCardPath+"' style='width:200px;height:150px;'/></td>" +
 								"<td>"+value.mIdCard+"</td>" +
 								"<td>"+value.mPersonName+"</td>" +
 								"<td>"+value.mTel+"</td>" +
@@ -77,7 +77,7 @@ Index.prototype.bindEvent = function(){
 								"</tr>";
 					});
 					m_tbody.append(trs);
-//					$("#div_test").append("<img class='img-circle' src='10.222.232.157:8087/imgs/15007115195/IDCard.jpg' style='width:100%;height:100%;'/>");
+//					$("#div_test").append("<img class='img-circle' src='10.222.232.145:8080/imgs/15007115195/IDCard.jpg' style='width:100%;height:100%;'/>");
 				}else{
 					alert("没有数据啦 !");
 					page_num = page_num - 1;
@@ -105,7 +105,7 @@ Index.prototype.bindEvent = function(){
 					var trs = "";
 					$.each(mList,function(key,value){
 						trs += "<tr>" +
-								"<td><img class='img-circle' src='http://10.222.232.157:8087/imgs/"+value.mCardPath+"' style='width:100%;height:60%;'/></td>" +
+								"<td><img class='img-circle' src='http://10.222.232.145:8080/imgs/"+value.mCardPath+"' style='width:200px;height:150px;'/></td>" +
 								"<td>"+value.mIdCard+"</td>" +
 								"<td>"+value.mPersonName+"</td>" +
 								"<td>"+value.mTel+"</td>" +
@@ -116,7 +116,7 @@ Index.prototype.bindEvent = function(){
 								"</tr>";
 					});
 					m_tbody.append(trs);
-//					$("#div_test").append("<img class='img-circle' src='10.222.232.157:8087/imgs/15007115195/IDCard.jpg' style='width:100%;height:100%;'/>");
+//					$("#div_test").append("<img class='img-circle' src='10.222.232.145:8080/imgs/15007115195/IDCard.jpg' style='width:100%;height:100%;'/>");
 				}else{
 					alert("已经是第一页啦 !");
 					page_num = page_num + 1;

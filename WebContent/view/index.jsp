@@ -29,7 +29,7 @@
 			</a></li>
 			<li class=" i_32_dashboard"><a
 				href="${pageContext.request.contextPath}/view/merchantManage.jsp"
-				title="General Info"> <span class="tab_label">商家管理</span> <span
+				title="General Info"> <span class="tab_label">注册管理</span> <span
 					class="tab_info">Merchant Manage</span>
 			</a></li>
 			<li class=" i_32_dashboard"><a
@@ -73,7 +73,7 @@
 								<div class="face"></div>
 							</div>
 							<div class="shadow"></div>
-							<h1>管理员首页~</h1>
+							<h1><font color="#C0C0C0">Welcome to the management system^_^ </font></h1>
 						</div>
 					</div>
 				</div>

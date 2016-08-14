@@ -24,7 +24,7 @@
 				</li>
 				<li class=" i_32_dashboard">
 					<a href="${pageContext.request.contextPath}/view/merchantManage.jsp" title="General Info">
-						<span class="tab_label">商家管理</span>
+						<span class="tab_label">注册管理</span>
 						<span class="tab_info">Merchant Manage</span>
 					</a>
 				</li>
@@ -61,25 +61,10 @@
 				<div class="g_12 separator"><span></span></div>	
 				<!--  -->
 				<div class="g_12 " id="div_dish_data">
-				  <!-- 
-					<div class="g_6">
-						<div class="span4">
-							<table style="width: 100%">
-								<tr>
-									<td align="center">
-										<img class="img-circle" src="${pageContext.request.contextPath}/res/images/Avatar/avatar1.png" style="width:150px;height:150px;"/>
-										<p><button>tets</button></p>
-										<p><button>tets</button></p>
-									</td>
-								</tr>
-							</table>
-						</div>
-					</div>
-					 -->
  				</div>
  				
  				<div class="g_12">
- 					<div align="center"><button class="button button-3d button-box button-jumbo" id="btn_previous">Prev</button><button class="button button-3d button-box button-jumbo" id="btn_next">next</button></div>
+ 					<div align="center"><button class="button button-3d button-box button-jumbo" id="btn_previous"><font color="#C0C0C0">Prev</font></button>&nbsp;&nbsp;<button class="button button-3d button-box button-jumbo" id="btn_next"><font color="#C0C0C0">next</font></button></div>
  				</div>
  				
 			</div>

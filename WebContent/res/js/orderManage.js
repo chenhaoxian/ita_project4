@@ -36,7 +36,7 @@ OrderManage.prototype.bindEvent = function(){
 								"</tr>" ;
 					});
 					m_tbody.append(trs);
-//					$("#div_test").append("<img class='img-circle' src='10.222.232.157:8087/imgs/15007115195/IDCard.jpg' style='width:100%;height:100%;'/>");
+//					$("#div_test").append("<img class='img-circle' src='10.222.232.145:8080/imgs/15007115195/IDCard.jpg' style='width:100%;height:100%;'/>");
 				}else{
 					alert("没有数据啦 !");
 					page_order = page_order - 1;
@@ -74,7 +74,7 @@ OrderManage.prototype.bindEvent = function(){
 								"</tr>" ;	
 					});
 					m_tbody.append(trs);
-//					$("#div_test").append("<img class='img-circle' src='10.222.232.157:8087/imgs/15007115195/IDCard.jpg' style='width:100%;height:100%;'/>");
+//					$("#div_test").append("<img class='img-circle' src='10.222.232.145:8080/imgs/15007115195/IDCard.jpg' style='width:100%;height:100%;'/>");
 				}else{
 					alert("已经第一页啦 ");
 					page_order = page_order + 1;
@@ -171,7 +171,6 @@ function handleOrder(oId,mId){
 //	alert(oId);
 //	alert($("#select_"+oId).find("option:selected").attr("value"));
 	var select_value = $("#select_"+oId).find("option:selected").attr("value");
-	alert(select_value);
 	var toUrl = "";
 	if(select_value == 2){
 		

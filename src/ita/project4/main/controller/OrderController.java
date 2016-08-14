@@ -9,6 +9,9 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 
+import ita.project4.main.common.BaseController;
+import ita.project4.main.exceptions.BaseException;
+import ita.project4.main.exceptions.MyException;
 import ita.project4.main.po.Order;
 import ita.project4.main.pojo.Pager;
 import ita.project4.main.service.OrderService;
@@ -19,7 +22,7 @@ import ita.project4.main.webService.OrderWebSevice;
 
 @Controller
 @RequestMapping("order")
-public class OrderController {
+public class OrderController extends BaseController{
 	
 	@Autowired
 	private OrderService orderService;
@@ -53,7 +56,7 @@ public class OrderController {
 	
 	@RequestMapping("get/orderDetailByOid/{oId}")
 	@ResponseBody
-	public VoOrder getOrderVo(@PathVariable int oId){
+	public VoOrder getOrderVo(@PathVariable int oId) {
 		VoOrder vOrder = orderWebService.getOrderDetailByOid(oId);
 		try {
 			vOrder.setFoodList(JsonUtils.json2list(vOrder.getFoodInfo(), VoFood.class));
@@ -96,6 +99,7 @@ public class OrderController {
 	@RequestMapping("put/blackOrder/{oId}/{mId}")
 	@ResponseBody
 	public String blackOrder(@PathVariable int oId,@PathVariable int mId){
+		System.out.println(mId);
 		int count = orderService.blackOrder(oId, 4, mId);
 		if(count >= 1){
 			return "success";

@@ -48,5 +48,12 @@ public class FoodServiceImpl implements FoodService {
 		// TODO Auto-generated method stub
 		return fooddao.getPassfId();
 	}
+	
+	@Override
+	@Transactional
+	public int deleteFoodBymId(int mId) {
+	// TODO Auto-generated method stub
+	return fooddao.deleteFoodBymId(mId);
+	}
 
 }

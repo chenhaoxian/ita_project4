@@ -8,6 +8,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 
+import ita.project4.main.common.BaseController;
 import ita.project4.main.po.Food;
 import ita.project4.main.po.Merchant;
 import ita.project4.main.pojo.Pager;
@@ -15,7 +16,7 @@ import ita.project4.main.service.FoodService;
 
 @Controller
 @RequestMapping("/food")
-public class FoodController {
+public class FoodController extends BaseController{
 	
 	@Autowired
 	private FoodService foodService;
@@ -26,7 +27,7 @@ public class FoodController {
 		List<Integer> fIdList = foodService.getPassfId();
 		StringBuilder sb = new StringBuilder();
 		for(int i=0; i<fIdList.size(); i++){
-			sb.append(fIdList.get(0)).append(",");
+			sb.append(fIdList.get(i)).append(",");
 		}
 		return sb.toString();
 	}

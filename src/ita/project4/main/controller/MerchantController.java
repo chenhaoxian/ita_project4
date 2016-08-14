@@ -9,13 +9,14 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 
+import ita.project4.main.common.BaseController;
 import ita.project4.main.po.Merchant;
 import ita.project4.main.pojo.Pager;
 import ita.project4.main.service.MerchantService;
 
 @Controller
 @RequestMapping("merchant")
-public class MerchantController {
+public class MerchantController extends BaseController{
 	
 	@Autowired
 	private MerchantService merchantService;

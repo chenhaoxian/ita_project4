@@ -25,7 +25,7 @@
 				</li>
 				<li class=" i_32_dashboard">
 					<a href="${pageContext.request.contextPath}/view/merchantManage.jsp" title="General Info">
-						<span class="tab_label">商家管理</span>
+						<span class="tab_label">注册管理</span>
 						<span class="tab_info">Merchant Manage</span>
 					</a>
 				</li>
@@ -65,6 +65,7 @@
 						<table class="tables" >
 						<th>订单ID</th><th>店家名称</th><th>X</th>
 							 <tbody id="div_order_data">
+							
 							 <c:forEach var="order" items="${oList}">
 							 	<tr align="center" id="order_tr_${order.oId }">
 									<td>${order.oId }</td>
@@ -94,7 +95,7 @@
 				</div>
 				
 				<div class="g_12 ">
-						<div align="center"><button class="button button-3d button-box button-jumbo" id="btn_previous">Prev</button>&nbsp;&nbsp;&nbsp;<button class="button button-3d button-box button-jumbo" id="btn_next">next</button></div>
+						<div align="center"><button class="button button-3d button-box button-jumbo" id="btn_previous"><font color="#C0C0C0">Prev</font></button>&nbsp;&nbsp;<button class="button button-3d button-box button-jumbo" id="btn_next"><font color="#C0C0C0">next</font></button></div>
 				</div>
 				
 	

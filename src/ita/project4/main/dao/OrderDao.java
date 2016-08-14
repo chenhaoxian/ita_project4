@@ -18,5 +18,7 @@ public interface OrderDao {
 	int saveOrder(int oId,int oStatus);
 	
 	int getOStatusByOId(int oId);
+	
+	
 
 }

@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import ita.project4.main.dao.FoodDao;
 import ita.project4.main.dao.MerchantDao;
 import ita.project4.main.dao.OrderDao;
 import ita.project4.main.po.Order;
@@ -21,6 +22,9 @@ public class OrderServiceImpl implements OrderService{
 	
 	@Autowired
 	private MerchantDao merchantDao;
+	
+	@Autowired
+	private FoodDao foodDao;
 	
 	public OrderServiceImpl() {
 		// TODO Auto-generated constructor stub
@@ -69,7 +73,7 @@ public class OrderServiceImpl implements OrderService{
 	@Transactional
 	public int blackOrder(int oId, int status, int mId) {
 		orderDao.updateOrderStatus(oId, status);
-		
+		foodDao.deleteFoodBymId(mId);
 		return merchantDao.updateMerchantStatus(mId, status);
 	}
 	

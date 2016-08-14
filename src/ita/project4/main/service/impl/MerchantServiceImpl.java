@@ -9,6 +9,7 @@ import org.springframework.transaction.annotation.Transactional;
 import ita.project4.main.dao.MerchantDao;
 import ita.project4.main.po.Merchant;
 import ita.project4.main.pojo.Pager;
+import ita.project4.main.service.FoodService;
 import ita.project4.main.service.MerchantService;
 
 @Service("merchantService")
@@ -16,6 +17,9 @@ public class MerchantServiceImpl implements MerchantService{
 	
 	@Autowired
 	private MerchantDao merchantDao;
+	
+	@Autowired
+	private FoodService foodService;
 
 	@Override
 	public List<Merchant> findMerchantByPage(Pager p) {
@@ -26,7 +30,9 @@ public class MerchantServiceImpl implements MerchantService{
 	@Override
 	@Transactional
 	public int updateMerchantStatus(int mId, int status) {
-		// TODO Auto-generated method stub
+		if(status == 4){
+			foodService.deleteFoodBymId(mId);
+		}
 		return merchantDao.updateMerchantStatus(mId, status);
 	}
 
@@ -65,7 +71,7 @@ public class MerchantServiceImpl implements MerchantService{
 	@Override
 	@Transactional
 	public int updateMerchantScore(int mId, double mScore) {
-		// TODO Auto-generated method stub
+
 		return merchantDao.updateMerchantScore(mId, mScore);
 	}
 	

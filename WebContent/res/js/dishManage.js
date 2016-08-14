@@ -16,11 +16,12 @@ DishManage.prototype.init = function(){
 			if(fList != null && fList != ''){
 				var temp = "";
 				$.each(fList,function(key,value){
-					temp += "<div class='g_6' ><div class='span4'><table style='width: 100%'><tr><td align='center' style='border:1px solid #ccc;'>" +
-							"<img style='box-shadow: 1px 1px 8px #ccc;' class='img-circle' src='http://10.222.232.157:8087/imgs/" +
+					temp += "<div class='g_6' ><div class='span4'><table style='width: 100%'><tr><td align='center' >" +  //style='border:1px solid #ccc;'
+							"<img style='box-shadow: 1px 1px 8px #ccc;width:250px ;height:180px ;' class='img-circle' src='http://10.222.232.145:8080/imgs/" +
 							value.fViewPath+
-							"' style='width:150px;height:150px;'/>"+
-							"<p>"+value.fName+"</p>";
+							"'/>"+
+							"<p>商品名称："+value.fName+"</p>"+
+							"<p>商家ID："+value.mId+"</p>";
 					if(value.fStatus == 3){
 						temp += "<p><button onclick='cancelDish(this,"+value.fId+")' class='button button-pill button-raised button-primary'>取消推荐</button></p>";
 					}else{
@@ -58,10 +59,11 @@ DishManage.prototype.bindEvent = function(){
 					var temp = "";
 					$.each(fList,function(key,value){
 						temp += "<div class='g_6'><div class='span4'><table style='width: 100%'><tr><td align='center'>" +
-								"<img class='img-circle' src='http://10.222.232.157:8087/imgs/" +
+								"<img style='box-shadow: 1px 1px 8px #ccc;width:250px ;height:180px ;' class='img-circle' src='http://10.222.232.145:8080/imgs/" +
 								value.fViewPath+
-								"' style='width:150px;height:150px;'/>"+
-								"<p>"+value.fName+"</p>";
+								"'/>"+
+								"<p>商品名称："+value.fName+"</p>"+
+								"<p>商家ID："+value.mId+"</p>";
 						if(value.fStatus == 3){
 							temp += "<p><button onclick='cancelDish(this,"+value.fId+")' class='button button-pill button-raised button-primary'>取消推荐</button></p>";
 						}else{
@@ -98,10 +100,11 @@ DishManage.prototype.bindEvent = function(){
 					var temp = "";
 					$.each(fList,function(key,value){
 						temp += "<div class='g_6'><div class='span4'><table style='width: 100%'><tr><td align='center'>" +
-								"<img class='img-circle' src='http://10.222.232.157:8087/imgs/" +
+								"<img style='box-shadow: 1px 1px 8px #ccc;width:250px ;height:180px ;' class='img-circle' src='http://10.222.232.145:8080/imgs/" +
 								value.fViewPath+
-								"' style='width:150px;height:150px;'/>"+
-								"<p>"+value.fName+"</p>";
+								"' />"+
+								"<p>商品名称："+value.fName+"</p>"+
+								"<p>商家ID："+value.mId+"</p>";
 						if(value.fStatus == 3){
 							temp += "<p><button onclick='cancelDish(this,"+value.fId+")' class='button button-pill button-raised button-primary'>取消推荐</button></p>";
 						}else{
