@@ -55,10 +55,7 @@
 			<div class="grid_wrapper">
 
 				<div class="g_6 contents_header">
-					<h3 class="i_16_dashboard tab_label">首 页</h3>
-					<div>
-						<span class="label">Index</span>
-					</div>
+					<h3 class="i_16_dashboard tab_label">滴滴外卖</h3>
 				</div>
 
 
@@ -73,7 +70,7 @@
 								<div class="face"></div>
 							</div>
 							<div class="shadow"></div>
-							<h1>管理员首页~</h1>
+							<h1><font color="#C0C0C0">Welcome to the management system^_^</h1>
 						</div>
 					</div>
 				</div>
