@@ -16,5 +16,7 @@ public interface FoodService {
 	int updateFoodStatus(int fId, int status);
 
 	List<Integer> getPassfId();
+	
+	int deleteFoodBymId(int mId);
 
 }

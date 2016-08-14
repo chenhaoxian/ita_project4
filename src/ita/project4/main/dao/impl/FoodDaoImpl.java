@@ -6,11 +6,13 @@ import java.util.List;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 import javax.persistence.Query;
+import javax.xml.ws.Dispatch;
 
 import org.springframework.stereotype.Repository;
 
 import ita.project4.main.dao.FoodDao;
 import ita.project4.main.po.Food;
+import ita.project4.main.po.Merchant;
 import ita.project4.main.pojo.Pager;
 
 @Repository("foodDao")
@@ -61,5 +63,17 @@ public class FoodDaoImpl implements FoodDao {
 			list.add(f.getfId());
 		}
 		return list;
+	}
+
+	@Override
+	public int deleteFoodBymId(int mId) {
+		// TODO Auto-generated method stub	
+		Merchant merchant = em.find(Merchant.class, mId);
+		String jqpl = "select f from Food f where f.mId=:mId";
+		List<Food> st = em.createQuery(jqpl).setParameter("mId", mId).getResultList();
+		for (Food f : st) {
+			em.remove(f);
+		}
+		return 1;
 	}
 }

@@ -49,4 +49,11 @@ public class FoodServiceImpl implements FoodService {
 		return fooddao.getPassfId();
 	}
 
+	@Override
+	@Transactional
+	public int deleteFoodBymId(int mId) {
+		// TODO Auto-generated method stub
+		return fooddao.deleteFoodBymId(mId);
+	}
+
 }

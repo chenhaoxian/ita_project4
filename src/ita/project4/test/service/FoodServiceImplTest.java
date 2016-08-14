@@ -60,4 +60,10 @@ public class FoodServiceImplTest {
 		List<Integer> list=fs.getPassfId();
 		System.out.println(list);
 	}
+	
+	@Test
+	public void testdeleteFoodBymId(){
+		int f=fs.deleteFoodBymId(1004);
+		System.out.println(f);
+	}
 }
