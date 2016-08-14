@@ -10,7 +10,7 @@
 	<!-- The Main CSS File -->
 	<link rel="stylesheet" href="${pageContext.request.contextPath}/res/css/style.css" />
   
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8" /></head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" /></head>
 <body>
 
 
@@ -194,6 +194,7 @@
 
 	</div>
 
-
+<script type="text/javascript" src="res/js/jquery.min.js"></script>
+<script type="text/javascript" src="res/js/index.js"></script>
 </body>
 </html>

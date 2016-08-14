@@ -37,6 +37,8 @@ public class RegisterComsumer implements MessageListener {
 //				System.out.println(request);
 				Merchant m = JsonUtils.toObject(request,Merchant.class);
 				System.out.println(m.toString());
+				m.setmStatus(1);
+				m.setmScore(10);
 				merchantService.saveMerchant(m);
 			} catch (JMSException e) {
 				LOGGER.error("接收信息出错", e);

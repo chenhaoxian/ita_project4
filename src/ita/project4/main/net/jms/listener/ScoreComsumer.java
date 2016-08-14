@@ -40,8 +40,12 @@ public class ScoreComsumer implements MessageListener {
 				final String request = textMessage.getText();
 				LOGGER.info(request);
 				System.out.println(request);
-				int reqInt = Integer.parseInt(request);
-				merchantService.updateMerchantStatus(reqInt, 4);
+				int mId = Integer.parseInt(request.split("#")[0]);
+//				int score = Integer.parseInt(request.split("#")[1]);
+				double score = Double.parseDouble(request.split("#")[1]);
+				merchantService.updateMerchantScore(mId, score);
+				//int reqInt = Integer.parseInt(request);
+				//merchantService.updateMerchantStatus(reqInt, 4);
 			} catch (JMSException e) {
 				LOGGER.error("接收信息出错", e);
 			}

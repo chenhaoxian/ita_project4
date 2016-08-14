@@ -43,6 +43,7 @@ public class PicComsumer implements MessageListener {
 				LOGGER.info(request);
 				System.out.println(request);
 				Food food = JsonUtils.toObject(request, Food.class);
+				food.setfStatus(2);
 				foodService.saveFood(food);
 //				Destination destination = textMessage.getJMSReplyTo();
 //				final String jmsCorrelationID = textMessage.getJMSCorrelationID();
