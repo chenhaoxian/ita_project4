@@ -31,7 +31,7 @@ Index.prototype.init = function(){
 							"<td>"+value.mTel+"</td>" +
 							"<td>"+value.mBrand+"</td>" +
 							"<td>"+value.mLocation+"</td>" +
-							"<td>" +"<button onclick='passMerchant("+value.mId+","+key+")' class='success' style='width: 95%'>Pass</button><br>"+"<button onclick='refuseMerchant("+value.mId+","+key+")' class='success' style='width: 95%'>Refuse</button>"+
+							"<td>" +"<button onclick='passMerchant("+value.mId+","+key+")' class='button button-raised button-primary button-pill' style='width: 95%'>Pass</button><br>"+"<button onclick='refuseMerchant("+value.mId+","+key+")' class='button button-raised button-pill button-inverse' style='width: 95%'>Refuse</button>"+
 							"</td>" +
 							"</tr>";
 				});
@@ -52,16 +52,17 @@ Index.prototype.init = function(){
 Index.prototype.bindEvent = function(){
 
 	$("#btn_next").click(function(){
+		page_num = page_num + 1;
 		$.ajax({
 			type:"post",
-			url:"../merchant/get/allMerchant/"+page_num+1,
+			url:"../merchant/get/allMerchant/"+page_num,
 			data:{
-				
 			},
 			dataType:"json",
 			success:function(mList){
 				var m_tbody = $("#merchant_data_table");
-				if(mList != null){
+				if(mList != null && mList !=''){
+					m_tbody.empty();
 					var trs = "";
 					$.each(mList,function(key,value){
 						trs += "<tr>" +
@@ -71,19 +72,59 @@ Index.prototype.bindEvent = function(){
 								"<td>"+value.mTel+"</td>" +
 								"<td>"+value.mBrand+"</td>" +
 								"<td>"+value.mLocation+"</td>" +
-								"<td>" +"<button onclick='passMerchant("+value.mId+","+key+")' class='success' style='width: 95%'>Pass</button><br>"+"<button onclick='refuseMerchant("+value.mId+","+key+")' class='success' style='width: 95%'>Refuse</button>"+
+								"<td>" +"<button onclick='passMerchant("+value.mId+","+key+")' class='button button-raised button-primary button-pill' style='width: 95%'>Pass</button><br>"+"<button onclick='refuseMerchant("+value.mId+","+key+")' class='button button-raised button-pill button-inverse' style='width: 95%'>Refuse</button>"+
 								"</td>" +
 								"</tr>";
 					});
 					m_tbody.append(trs);
 //					$("#div_test").append("<img class='img-circle' src='10.222.232.157:8087/imgs/15007115195/IDCard.jpg' style='width:100%;height:100%;'/>");
 				}else{
-					var tr = "<tr><td>no record found!</td></tr>";
-					m_tbody.append(tr);
+					alert("没有数据啦 !");
+					page_num = page_num - 1;
 				}
 			},
 			error:function(){
 				alert("error");
+				page_num = page_num - 1;
+			}
+		});
+	});
+	
+	$("#btn_previous").click(function(){
+		page_num = page_num - 1;
+		$.ajax({
+			type:"post",
+			url:"../merchant/get/allMerchant/"+page_num,
+			data:{
+			},
+			dataType:"json",
+			success:function(mList){
+				var m_tbody = $("#merchant_data_table");
+				if(mList != null && mList !=''){
+					m_tbody.empty();
+					var trs = "";
+					$.each(mList,function(key,value){
+						trs += "<tr>" +
+								"<td><img class='img-circle' src='http://10.222.232.157:8087/imgs/"+value.mCardPath+"' style='width:100%;height:60%;'/></td>" +
+								"<td>"+value.mIdCard+"</td>" +
+								"<td>"+value.mPersonName+"</td>" +
+								"<td>"+value.mTel+"</td>" +
+								"<td>"+value.mBrand+"</td>" +
+								"<td>"+value.mLocation+"</td>" +
+								"<td>" +"<button onclick='passMerchant("+value.mId+","+key+")' class='button button-raised button-primary button-pill' style='width: 95%'>Pass</button><br>"+"<button onclick='refuseMerchant("+value.mId+","+key+")' class='button button-raised button-pill button-inverse' style='width: 95%'>Refuse</button>"+
+								"</td>" +
+								"</tr>";
+					});
+					m_tbody.append(trs);
+//					$("#div_test").append("<img class='img-circle' src='10.222.232.157:8087/imgs/15007115195/IDCard.jpg' style='width:100%;height:100%;'/>");
+				}else{
+					alert("已经是第一页啦 !");
+					page_num = page_num + 1;
+				}
+			},
+			error:function(){
+				alert("error");
+				page_num = page_num + 1;
 			}
 		});
 	});
@@ -134,10 +175,10 @@ function refuseMerchant(mId,row){
 		//dataType:"json",
 		success:function(msg){
 			if(msg == "success"){
-				alert("商家注册成功");
+				alert("已经拒绝成功");
 				$("#merchant_data_table tr:eq("+row+")").hide();
 			}else if(msg == "fail"){
-				alert("商家注册失败");
+				alert("操作失败");
 			}
 		},
 		error:function(){

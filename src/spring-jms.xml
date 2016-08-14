@@ -28,7 +28,7 @@
     
     <bean class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer">
         <property name="location">
-            <value>activeMQ.properties</value>
+            <value>classpath:properties/activeMQ.properties</value>
         </property>
     </bean>
     

@@ -36,8 +36,27 @@ public class MerchantController {
 	public List<Merchant> findMerchant(@PathVariable int page){
 		Pager p = new Pager();
 		p.setPage(page);
-		List<Merchant> mList = merchantService.findMerchantByPage(p);
-		return mList;
+		p.setRows(7);
+		if(page == 0){
+			return null;
+		}else{
+			List<Merchant> mList = merchantService.findMerchantByPage(p);
+			return mList;
+		}
+	}
+	
+	@RequestMapping("get/lowMerchant/{page}")
+	@ResponseBody
+	public List<Merchant> findLowMerchant(@PathVariable int page){
+		Pager p = new Pager();
+		p.setPage(page);
+		p.setRows(7);
+		if(page == 0){
+			return null;
+		}else{
+			List<Merchant> mList = merchantService.findLowMerchantByPage(p);
+			return mList;
+		}
 	}
 	
 	@RequestMapping(value="get/status",method=RequestMethod.GET)
@@ -56,6 +75,7 @@ public class MerchantController {
 	public int getMStatus(@PathVariable int mId){
 		int status = merchantService.findMerchantStatus(mId);
 		return status;
+		
 	}
 	
 	@RequestMapping(value="/put/passStatus/{mId}",method=RequestMethod.POST)
@@ -80,7 +100,16 @@ public class MerchantController {
 		}
 	}
 	
-	
-	
+	@RequestMapping(value="/put/putBlack/{mId}",method=RequestMethod.POST)
+	@ResponseBody
+	public String putBlack(@PathVariable int mId){
+		System.out.println(mId);
+		int count = merchantService.updateMerchantStatus(mId, 4);
+		if(count >= 1){
+			return "success";
+		}else{
+			return "fail";
+		}
+	}
 
 }

@@ -7,7 +7,7 @@ import ita.project4.main.pojo.Pager;
 
 public interface MerchantDao {
 	
-	List<Merchant> getMerchantByPage(Pager p);
+List<Merchant> getMerchantByPage(Pager p);
 	
 	int updateMerchantStatus(int mId,int status);
 	
@@ -20,5 +20,10 @@ public interface MerchantDao {
 	int findMerchantStatus(int mId);
 	
 	List<Integer> getPassMId();
+	
+	int updateMerchantScore(int mId,double mScore);
+	
+	List<Merchant> findLowMerchantByPage(Pager p);
+
 
 }

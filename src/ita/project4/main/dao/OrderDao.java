@@ -13,4 +13,10 @@ public interface OrderDao {
 
 	List<Order> findOrderByPage(Pager p);
 
+	int updateOrderStatus(int oId, int oStatus);
+	
+	int saveOrder(int oId,int oStatus);
+	
+	int getOStatusByOId(int oId);
+
 }

@@ -4,44 +4,13 @@
 <html>
 <head>
 	<meta charset="UTF-8" />
-
-	<title>admin</title>
-
-	<!-- The Main CSS File -->
-	<link rel="stylesheet" href="${pageContext.request.contextPath}/res/css/style.css" />
-  
+	<title>admin</title> 
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 	
 	</head>
 <body>
 
-
-	
-	<!--==================================================== 4 yuan =============================================== -->
-	<header class="main_header">
-		<div class="wrapper">
-			<nav class="top_buttons">
-				<ul>
-					<li class="big_button">
-						<div class="big_count">
-							<span>7</span>
-						</div>
-						<div class="out_border">
-							<div class="button_wrapper">
-								<div class="in_border">
-									<a href="#" title="Support" class="the_button">
-										<span class="i_32_support"></span>
-									</a>
-								</div>
-							</div>
-						</div>
-					</li>
-					
-				</ul>
-			</nav>
-		</div>
-	</header>
-
+	<jsp:include page="header.jsp"></jsp:include>
 	<!-- =========================侧边栏目          start ========================================================-->
 
 
@@ -50,27 +19,33 @@
 		<aside class="sidebar">
 			<ul class="tab_nav">
 				<li class=" i_32_dashboard">
-					<a href="index.jsp" title="General Info">
+					<a href="${pageContext.request.contextPath}/view/index.jsp" title="General Info">
 						<span class="tab_label">首   页</span>
 						<span class="tab_info">Index</span>
 					</a>
 				</li>
-				<li class="active_tab i_32_dashboard">
-					<a href="merchantManage.jsp" title="General Info">
+				<li class=" i_32_dashboard active_tab">
+					<a href="${pageContext.request.contextPath}/view/merchantManage.jsp" title="General Info">
 						<span class="tab_label">商家管理</span>
 						<span class="tab_info">Merchant Manage</span>
 					</a>
 				</li>
 				<li class=" i_32_dashboard">
-					<a href="chefDish.jsp" title="General Info">
+					<a href="${pageContext.request.contextPath}/view/chefDish.jsp" title="General Info">
 						<span class="tab_label">推荐菜品</span>
 						<span class="tab_info">Main Dish</span>
 					</a>
 				</li>
 				<li class=" i_32_dashboard">
-					<a href="scoreManage.jsp" title="General Info">
+					<a href="${pageContext.request.contextPath}/view/scoreManage.jsp" title="General Info">
 						<span class="tab_label">低评商家</span>
 						<span class="tab_info">Score Manage</span>
+					</a>
+				</li>
+				<li class=" i_32_dashboard ">
+					<a href="${pageContext.request.contextPath}/order/get/orderPage" title="General Info">
+						<span class="tab_label">投诉订单</span>
+						<span class="tab_info">Complaint Order</span>
 					</a>
 				</li>
 			</ul>
@@ -89,21 +64,10 @@
 				<div class="g_12 ">
 						<table class="tables" >
 							<th>身份证图片</th><th>身份证号</th><th>姓名</th><th>电话</th><th>店名</th><th>地址</th><th>状态</th>
-							<!-- 
-							<tr>
-								<td><img class="img-circle" src="${pageContext.request.contextPath}/res/images/kanrisha_logo.png" style="width:80%;height:100%;"/></td>
-								<td>22444444444444</td>
-								<td>22444</td>
-								<td>24444444442</td>
-								<td>ddsfsdfsdfsdfdf</td>
-								<td>fsfsdf22</td>
-								<td>22sdfs</td>
-							</tr> -->
 							<tbody id="merchant_data_table"></tbody>
 						</table>
-						<div align="center"><button class="success">前一页</button><button class="success" id="btn_next">后一页</button></div>
+						<div align="center"><button class="button button-3d button-box button-jumbo" id="btn_previous">Prev</button><button class="button button-3d button-box button-jumbo" id="btn_next">next</button></div>
 				</div>
-
 			</div>
 		</div>
 	</div>

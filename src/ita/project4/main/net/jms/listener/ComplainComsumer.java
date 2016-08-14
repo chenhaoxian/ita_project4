@@ -1,16 +1,17 @@
 package ita.project4.main.net.jms.listener;
 
-import javax.jms.Destination;
 import javax.jms.JMSException;
 import javax.jms.Message;
 import javax.jms.MessageListener;
-import javax.jms.Session;
 import javax.jms.TextMessage;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jms.core.JmsTemplate;
-import org.springframework.jms.core.MessageCreator;
+
+import ita.project4.main.po.Order;
+import ita.project4.main.service.OrderService;
 
 public class ComplainComsumer implements MessageListener {
 
@@ -25,6 +26,9 @@ public class ComplainComsumer implements MessageListener {
 	public void setConTemplate(JmsTemplate conTemplate) {
 		this.conTemplate = conTemplate;
 	}
+	
+	@Autowired
+	private OrderService orderService;
 
 	@Override
 	public void onMessage(Message message) {
@@ -34,18 +38,13 @@ public class ComplainComsumer implements MessageListener {
 				final String request = textMessage.getText();
 				LOGGER.info(request);
 				System.out.println(request);
-				
-//				Destination destination = textMessage.getJMSReplyTo();
-//				final String jmsCorrelationID = textMessage.getJMSCorrelationID();
-//				jmsTemplate.send(destination, new MessageCreator() {
-//
-//					@Override
-//					public Message createMessage(Session session) throws JMSException {
-//						Message msg = session.createTextMessage(request + "的应答！");
-//						msg.setJMSCorrelationID(jmsCorrelationID);
-//						return msg;
-//					}
-//				});
+				int oId = Integer.parseInt(request.split("#")[0]);
+				String mBrand = request.split("#")[1];
+				Order o = new Order();
+				o.setoId(oId);
+				o.setmBrand(mBrand);
+				o.setoStatus(1);
+				orderService.saveOrder(o);
 			} catch (JMSException e) {
 				LOGGER.error("接收信息出错", e);
 			}
