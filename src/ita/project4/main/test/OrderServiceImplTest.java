@@ -62,5 +62,10 @@ public class OrderServiceImplTest {
 	public void testsaveOrder(){
 		os.saveOrder(5, 2);
 	}
+	
+	@Test
+	public void testgetOStatusByOId(){
+		System.out.println(os.getOStatusByOId(1));
+	}
 
 }

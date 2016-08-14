@@ -18,7 +18,7 @@ public interface OrderService {
 	int updateOrderStatus(int oId,int oStatus);
 	
 	
-	
+	int getOStatusByOId(int oId);
 	
 	
 

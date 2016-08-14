@@ -9,6 +9,7 @@ import javax.persistence.Query;
 import org.springframework.stereotype.Repository;
 
 import ita.project4.main.dao.OrderDao;
+import ita.project4.main.po.Merchant;
 import ita.project4.main.po.Order;
 import ita.project4.main.pojo.Pager;
 
@@ -65,5 +66,15 @@ public class OrderDaoImpl implements OrderDao{
 		em.persist(order);
 		return order.getoId();
 		}
+
+	@Override
+	public int getOStatusByOId(int oId) {
+		// TODO Auto-generated method stub
+		String jqpl = "select o from Order o where o.oId=:oId";// :后面是占位符，前面指的是数据库中的字段
+		@SuppressWarnings("unchecked")
+		List<Order> lo = em.createQuery(jqpl).setParameter("oId", oId).getResultList();
+		return lo.get(0).getoStatus();
+	
+	}
 
 }

@@ -64,5 +64,11 @@ public class OrderServiceImpl implements OrderService{
 		return orderDao.updateOrderStatus(oId,oStatus);
 	}
 
+	@Override
+	public int getOStatusByOId(int oId) {
+		// TODO Auto-generated method stub
+		return orderDao.getOStatusByOId(oId);
+	}
+
 
 }
