@@ -24,6 +24,10 @@ List<Merchant> findMerchantByPage(Pager p );
 	int updateMerchantScore(int mId,double mScore);
 	
 	List<Merchant> findLowMerchantByPage(Pager p);
+	
+	 List<String> findAllmTel() ;
+	 
+	 Merchant findMerchantBymTel(String mTel, int mStatus);
 
 	
 

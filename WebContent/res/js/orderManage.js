@@ -31,7 +31,7 @@ OrderManage.prototype.bindEvent = function(){
 								"<td class='toggle' onclick='showOrhidd("+value.oId+")'><span type='button' id='"+value.oId+"' style='margin-left:15px;'><i class='fa fa-lg fa-angle-down fa-angle-double-up'></i></span></td>"+
 								"</td>" +
 								"</tr>" +
-								"<tr align='center' class='form' id='f"+value.oId+"' style='display:none; background-color: #FFFFFC'>" +
+								"<tr align='center' class='form' id='f"+value.oId+"' style='display:none; background-color: #f5f5f5'>" +
 								"<td colspan='3'><div id='oMsg_'"+value.oId+"></div></td>" +
 								"</tr>" ;
 					});
@@ -69,7 +69,7 @@ OrderManage.prototype.bindEvent = function(){
 								"<td class='toggle' onclick='showOrhidd("+value.oId+")'><span type='button' id='"+value.oId+"' style='margin-left:15px;'><i class='fa fa-lg fa-angle-down fa-angle-double-up'></i></span></td>"+
 								"</td>" +
 								"</tr>" +
-								"<tr align='center' class='form' id='f"+value.oId+"' style='display:none; background-color: #FFFFFC'>" +
+								"<tr align='center' class='form' id='f"+value.oId+"' style='display:none; background-color: #f5f5f5'>" +
 								"<td colspan='3'><div id='oMsg_'"+value.oId+"></div></td>" +
 								"</tr>" ;	
 					});

@@ -35,7 +35,7 @@ public class OrderWebServiceImpl implements OrderWebSevice {
 //			e.printStackTrace();
 //		}
 //		String url = prop.getProperty("urlForOrderMsg")+oId;
-		WebResource wr = client.resource("http://10.222.232.152:8082/WeekFourClient/action/complaintByOId?oId="+oId);
+		WebResource wr = client.resource("http://10.222.232.152:8082/WeekFourClient/complaintByOId?oId="+oId);
 		String orderMsg = wr.accept(MediaType.APPLICATION_JSON_TYPE)// accept请求头
 				.get(String.class);
 		System.out.println("orderMsg is ..." + orderMsg);
@@ -44,5 +44,7 @@ public class OrderWebServiceImpl implements OrderWebSevice {
 
 		return vOrder;
 	}
+
+	
 
 }

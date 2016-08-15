@@ -13,6 +13,7 @@ import ita.project4.main.common.BaseController;
 import ita.project4.main.po.Merchant;
 import ita.project4.main.pojo.Pager;
 import ita.project4.main.service.MerchantService;
+import ita.project4.main.webService.OrderWebSevice;
 
 @Controller
 @RequestMapping("merchant")
@@ -20,6 +21,9 @@ public class MerchantController extends BaseController{
 	
 	@Autowired
 	private MerchantService merchantService;
+	
+	@Autowired 
+	private OrderWebSevice orderWebService;
 	
 	@RequestMapping("myTest")
 	public String test1(){
@@ -83,6 +87,8 @@ public class MerchantController extends BaseController{
 	@ResponseBody
 	public String passMerchant(@PathVariable int mId){
 		int count = merchantService.updateMerchantStatus(mId, 2);
+//		String msg = orderWebService.noticeMerchant();
+//		System.out.println(msg);
 		if(count >=1){
 			return "success";
 		}else{

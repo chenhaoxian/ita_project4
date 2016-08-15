@@ -46,6 +46,11 @@
 						<span class="tab_info">Complaint Order</span>
 					</a>
 				</li>
+				<li class=" i_32_dashboard"><a
+				href="${pageContext.request.contextPath}/view/search.jsp"
+				title="General Info"> <span class="tab_label">商家管理</span> <span
+					class="tab_info">Index</span>
+			</a></li>
 			</ul>
 		</aside>
 		<!-- ==================侧边栏目    end ===================================================================== -->
@@ -64,7 +69,7 @@
  				</div>
  				
  				<div class="g_12">
- 					<div align="center"><button class="button button-3d button-box button-jumbo" id="btn_previous"><font color="#C0C0C0">Prev</font></button>&nbsp;&nbsp;<button class="button button-3d button-box button-jumbo" id="btn_next"><font color="#C0C0C0">next</font></button></div>
+ 					<div align="center"><button class="button button-tiny" id="btn_previous">Prev</button>&nbsp;<button class="button button-tiny" id="btn_next">next</button></div>
  				</div>
  				
 			</div>

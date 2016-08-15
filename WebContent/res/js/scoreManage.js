@@ -30,7 +30,7 @@ ScoreManage.prototype.init = function(){
 							"<td>"+value.mBrand+"</td>" +
 							"<td>"+value.mLocation+"</td>" +
 							"<td>"+value.mScore+"</td>" +
-							"<td>" +"<button onclick='putBlack("+value.mId+","+key+")' class='button button-raised button-pill button-inverse' style='width: 95%'>拉黑</button><br>"+
+							"<td>" +"<button onclick='putBlack("+value.mId+","+key+")' class='button button-rounded button-tiny' style='width: 95%'>拉黑</button><br>"+
 							"</td>" +
 							"</tr>";
 				});
@@ -70,7 +70,7 @@ ScoreManage.prototype.bindEvent = function(){
 						"<td>"+value.mBrand+"</td>" +
 						"<td>"+value.mLocation+"</td>" +
 						"<td>"+value.mScore+"</td>" +
-						"<td>" +"<button onclick='putBlack("+value.mId+","+key+")' class='button button-raised button-pill button-inverse' style='width: 95%'>拉黑</button><br>"+
+						"<td>" +"<button onclick='putBlack("+value.mId+","+key+")' class='button button-rounded button-tiny' style='width: 95%'>拉黑</button><br>"+
 						"</td>" +
 						"</tr>";
 					});
@@ -108,7 +108,7 @@ ScoreManage.prototype.bindEvent = function(){
 						"<td>"+value.mBrand+"</td>" +
 						"<td>"+value.mLocation+"</td>" +
 						"<td>"+value.mScore+"</td>" +
-						"<td>" +"<button onclick='putBlack("+value.mId+","+key+")' class='button button-raised button-pill button-inverse' style='width: 95%'>拉黑</button><br>"+
+						"<td>" +"<button onclick='putBlack("+value.mId+","+key+")' class='button button-rounded button-tiny' style='width: 95% '>拉黑</button><br>"+
 						"</td>" +
 						"</tr>";
 					});

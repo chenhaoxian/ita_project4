@@ -111,5 +111,30 @@ public class MerchantDaoImpl implements MerchantDao {
 		return query.getResultList();
 	
 	}
+	
+	@Override
+	public List<String> findAllmTel() {
+		// TODO Auto-generated method stub 
+		String jpql = "select m from Merchant m where m.mStatus=2 or m.mStatus=4";
+		List<Merchant> st = em.createQuery(jpql).getResultList();
+		List<String> list = new ArrayList<>();
+		for (Merchant m : st) {
+		list.add(m.getmTel());
+		}
+		return list;
+
+	}
+
+	@Override
+	public Merchant findMerchantBymTel(String mTel,int mStatus) {
+		// TODO Auto-generated method stub
+		String jqpl = "select m from Merchant m where m.mTel=:mTel and m.mStatus=2 or m.mStatus=4 ";// :后面是占位符，前面指的是数据库中的字段
+		@SuppressWarnings("unchecked")
+		List<Merchant> lm = em.createQuery(jqpl).setParameter("mTel", mTel).getResultList();
+		if (lm.isEmpty())
+		return null;
+		else
+		return lm.get(0);
+	}
 
 }

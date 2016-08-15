@@ -7,7 +7,7 @@
 
 <title>admin</title>
 
-
+<link rel="stylesheet" href="${pageContext.request.contextPath}/res/css/autocomplete.css" />
 
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 </head>
@@ -22,7 +22,7 @@
 
 		<aside class="sidebar">
 		<ul class="tab_nav">
-			<li class=" i_32_dashboard active_tab"><a
+			<li class=" i_32_dashboard"><a
 				href="${pageContext.request.contextPath}/view/index.jsp"
 				title="General Info"> <span class="tab_label">首 页</span> <span
 					class="tab_info">Index</span>
@@ -47,7 +47,7 @@
 				title="General Info"> <span class="tab_label">投诉订单</span> <span
 					class="tab_info">Complaint Order</span>
 			</a></li>
-			<li class=" i_32_dashboard"><a
+			<li class=" i_32_dashboard active_tab"><a
 				href="${pageContext.request.contextPath}/view/search.jsp"
 				title="General Info"> <span class="tab_label">商家管理</span> <span
 					class="tab_info">Index</span>
@@ -60,7 +60,7 @@
 			<div class="grid_wrapper">
 
 				<div class="g_6 contents_header">
-					<h3 class="i_16_dashboard tab_label">Delicious商家管理中心</h3>
+					<h3 class="i_16_dashboard tab_label">商家管理</h3>
 					<div></div>
 				</div>
 
@@ -69,15 +69,35 @@
 				</div>
 
 				<div class="g_12 ">
-					<div class="out-container">
-						<div class="boo-wrapper">
-							<div class="boo">
-								<div class="face"></div>
-							</div>
-							<div class="shadow"></div>
-							<h1><font color="#C0C0C0">Welcome to the management system^_^ </font></h1>
-						</div>
+					<div>
+						<table>
+							<tr id="search_student_table_tr">
+								<td class="labelText"><h4 class="tab_label" style="padding-top:0;">电话号码：</h4></td>
+								<td >&nbsp;</td>
+								<td ><input type="text" class="form-control" id="input_tel" size="50" name="searchValue"></td>
+								<td >&nbsp;</td>
+								<td ><button type="button" class="button button-tiny" id="btn_search_tel" >搜索</button></td>
+							</tr>
+						</table>
 					</div>
+				</div>
+
+				<div class="g_12">
+					<table class="tables">
+						<thead>
+							<tr class="success" >
+								<th class="success">姓名</th>
+								<th class="success">电话</th>
+								<th class="success">身份证号</th>
+								<th class="success">店名</th>
+								<th class="success">地址</th>
+								<th class="success">状态</th>
+								<th class="success">操作</th>
+							</tr>
+						</thead>
+						<tbody id="merchant_data_table">
+						</tbody>
+					</table>
 				</div>
 
 
@@ -87,6 +107,7 @@
 	</div>
 
 	<script type="text/javascript" src="../res/js/jquery.min.js"></script>
-	<script type="text/javascript" src="../res/js/index.js"></script>
+	<script type="text/javascript" src="../res/js/jquery.autocomplete.min.js"></script>
+	<script type="text/javascript" src="../res/js/search.js"></script>
 </body>
 </html>

@@ -81,5 +81,17 @@ public class MerchantServiceImpl implements MerchantService{
 		return merchantDao.findLowMerchantByPage(p);
 	}
 	
+	@Override
+	public List<String> findAllmTel() {
+		// TODO Auto-generated method stub
+		return merchantDao.findAllmTel();
+	}
+
+	@Override
+	public Merchant findMerchantBymTel(String mTel, int mStatus) {
+		// TODO Auto-generated method stub
+		return merchantDao.findMerchantBymTel(mTel, mStatus);
+	}
+	
 
 }

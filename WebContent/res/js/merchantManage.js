@@ -31,7 +31,7 @@ Index.prototype.init = function(){
 							"<td>"+value.mTel+"</td>" +
 							"<td>"+value.mBrand+"</td>" +
 							"<td>"+value.mLocation+"</td>" +
-							"<td>" +"<button onclick='passMerchant("+value.mId+","+key+")' class='button button-raised button-primary button-pill' style='width: 95%'>Pass</button><br>"+"<button onclick='refuseMerchant("+value.mId+","+key+")' class='button button-raised button-pill button-inverse' style='width: 95%'>Refuse</button>"+
+							"<td>" +"<button onclick='passMerchant("+value.mId+","+key+")' class='button button-pill button-tiny' style='width: 95%'>Pass</button><br>"+"<button onclick='refuseMerchant("+value.mId+","+key+")' class='button button-pill button-tiny' style='width: 95%; MARGIN-TOP: 10PX;'>Refuse</button>"+
 							"</td>" +
 							"</tr>";
 				});
@@ -72,7 +72,7 @@ Index.prototype.bindEvent = function(){
 								"<td>"+value.mTel+"</td>" +
 								"<td>"+value.mBrand+"</td>" +
 								"<td>"+value.mLocation+"</td>" +
-								"<td>" +"<button onclick='passMerchant("+value.mId+","+key+")' class='button button-raised button-primary button-pill' style='width: 95%'>Pass</button><br>"+"<button onclick='refuseMerchant("+value.mId+","+key+")' class='button button-raised button-pill button-inverse' style='width: 95%'>Refuse</button>"+
+								"<td>" +"<button onclick='passMerchant("+value.mId+","+key+")' class='button button-pill button-tiny' style='width: 95%'>Pass</button><br>"+"<button onclick='refuseMerchant("+value.mId+","+key+")' class='button button-pill button-tiny' style='width: 95%; MARGIN-TOP: 10PX;'>Refuse</button>"+
 								"</td>" +
 								"</tr>";
 					});
@@ -111,7 +111,7 @@ Index.prototype.bindEvent = function(){
 								"<td>"+value.mTel+"</td>" +
 								"<td>"+value.mBrand+"</td>" +
 								"<td>"+value.mLocation+"</td>" +
-								"<td>" +"<button onclick='passMerchant("+value.mId+","+key+")' class='button button-raised button-primary button-pill' style='width: 95%'>Pass</button><br>"+"<button onclick='refuseMerchant("+value.mId+","+key+")' class='button button-raised button-pill button-inverse' style='width: 95%'>Refuse</button>"+
+								"<td>" +"<button onclick='passMerchant("+value.mId+","+key+")' class='button button-pill button-tiny' style='width: 95%'>Pass</button><br>"+"<button onclick='refuseMerchant("+value.mId+","+key+")' class='button button-pill button-tiny' style='width: 95%; MARGIN-TOP: 10PX;'>Refuse</button>"+
 								"</td>" +
 								"</tr>";
 					});
