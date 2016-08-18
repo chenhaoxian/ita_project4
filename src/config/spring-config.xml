@@ -11,7 +11,7 @@ http://www.springframework.org/schema/aop/spring-aop.xsd
 http://www.springframework.org/schema/context
 http://www.springframework.org/schema/context/spring-context-4.0.xsd
 http://www.springframework.org/schema/tx
-http://www.springframework.org/schema/tx/spring-tx-4.0.xsd" >
+http://www.springframework.org/schema/tx/spring-tx-4.0.xsd" > 
 	<!-- data source : DriverManagerDataSource <bean id="dataSource" class="org.springframework.jdbc.datasource.DriverManagerDataSource"> 
 		<property name="driverClassName" value="oracle.jdbc.driver.OracleDriver"/> 
 		<property name="url" value="jdbc:oracle:thin:@ITA-031-W7:1521:XE"/> <property 

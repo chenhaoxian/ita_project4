@@ -5,6 +5,40 @@ function OrderManage(){
 OrderManage.prototype.init = function(){
 	var self = this;
 	
+	$.ajax({
+		type:"post",
+		url:"../../order/get/allOrder/"+page_order,
+		data:{
+		},
+		dataType:"json",
+		success:function(oList){
+			var m_tbody = $("#div_order_data");
+			if(oList != null && oList !=''){
+				m_tbody.empty();
+				var trs = "";
+				$.each(oList,function(key,value){
+					trs += "<tr align='center' id='order_tr_"+value.oId+"'>" +
+							"<td>"+value.oId+"</td>" +
+							"<td>"+value.mBrand+"</td>" +
+							"<td class='toggle' onclick='showOrhidd("+value.oId+")'><span type='button' id='"+value.oId+"' style='margin-left:15px;'><i class='fa fa-lg fa-angle-down fa-angle-double-up'></i></span></td>"+
+							"</td>" +
+							"</tr>" +
+							"<tr align='center' class='form' id='f"+value.oId+"' style='display:none; background-color: #f5f5f5'>" +
+							"<td colspan='3'><div id='oMsg_'"+value.oId+"></div></td>" +
+							"</tr>" ;
+				});
+				m_tbody.append(trs);
+//				$("#div_test").append("<img class='img-circle' src='10.222.232.145:8080/imgs/15007115195/IDCard.jpg' style='width:100%;height:100%;'/>");
+			}else{
+				alert("没有数据啦 !");
+				page_order = page_order - 1;
+			}
+		},
+		error:function(){
+			alert("error");
+			page_order = page_order - 1;
+		}
+	});
 	
 }
 

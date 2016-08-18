@@ -70,29 +70,7 @@
 						<table class="tables" >
 						<th>订单ID</th><th>店家名称</th><th>X</th>
 							 <tbody id="div_order_data">
-							
-							 <c:forEach var="order" items="${oList}">
-							 	<tr align="center" id="order_tr_${order.oId }">
-									<td>${order.oId }</td>
-									<td>${order.mBrand }</td>
-									<td class="toggle" onclick="showOrhidd(${order.oId})"><span type="button" id="${order.oId }" style="margin-left:15px;"><i class="fa fa-lg fa-angle-down fa-angle-double-up"></i></span></td>
-								</tr>
-								<tr align="center" class="form" id="f${order.oId }" style="display:none; background-color: #f5f5f5">
-			                        <td colspan="3" ><div id='oMsg_${order.oId}'></div>
-			                        <!-- 
-			                        	<p>
-			                        		<select id="select_${order.oId}">  
-											  <option value ="2">驳回投诉</option>  
-											  <option value ="3">扣除押金</option>  
-											  <option value="4">拉黑商家</option>  
-											</select>
-			                        	</p>
-			                        	<p><button onclick='handleOrder(${order.oId})'>确认</button></p>
-			                        	 -->
-			                        </td>
 
-			                    </tr>
-							 </c:forEach>
 							 </tbody>
 
 						</table>
